@@ -78,7 +78,11 @@ body {
   color: var(--secondary);
   overflow-x: hidden;
   padding-top: calc(var(--nav-height) + var(--topbar-height));
-  transition: background-color var(--transition-speed) var(--transition-timing);
+  transition:padding-top var(--transition-speed) var(--transition-timing); /* NEW: Smooth padding transition */
+}
+
+body.nav-hidden {
+  padding-top: 0 !important;
 }
 
 [dir="rtl"] body { 
@@ -4306,12 +4310,19 @@ window.addEventListener('scroll', () => {
   const topBar = document.querySelector('.top-social-bar');
   const backToTopBtn = document.getElementById('backToTop');
   
+  // Calculate total header height
+  const navHeight = nav?.offsetHeight || 0;
+  const topBarHeight = topBar?.offsetHeight || 0;
+  const totalHeaderHeight = navHeight + topBarHeight;
+  
   if (currentScroll > lastScrollTop && currentScroll > 150) {
-    nav?.classList.add('hidden');
+   if (nav) nav.style.transform = `translateY(-${totalHeaderHeight}px)`;
     if (topBar) topBar.style.transform = 'translateY(-100%)';
+	document.body.classList.add('nav-hidden'); // NEW: Remove padding to eliminate gap
   } else {
-    nav?.classList.remove('hidden');
+    if (nav) nav.style.transform = 'translateY(0)';
     if (topBar) topBar.style.transform = 'translateY(0)';
+	document.body.classList.remove('nav-hidden'); // NEW: Restore padding
   }
   
   if (backToTopBtn) {
