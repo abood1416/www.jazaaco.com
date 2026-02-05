@@ -11,6 +11,9 @@
 <meta name="geo.placename" content="Jeddah">
 <meta name="geo.position" content="21.543333;39.215478">
 <meta name="ICBM" content="21.543333, 39.215478">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,7 +209,11 @@ body {
   right: 0;
   z-index: 1100;
   font-size: 0.9rem;
-  transition: transform var(--transition-speed) var(--transition-timing);
+  transition: transform 0.3s ease-in-out;
+}
+
+.top-social-bar.hidden {
+  transform: translateY(-100%);
 }
 
 .container-top {
@@ -271,11 +278,11 @@ nav {
   height: var(--nav-height);
   z-index: 1000;
   box-sizing: border-box;
-  transition: all var(--transition-speed) var(--transition-timing);
+  transition: transform 0.3s ease-in-out;
 }
 
 nav.hidden {
-  transform: translateY(-100%);
+  transform: translateY(calc(-100% - var(--topbar-height)));
 }
 
 [dir="rtl"] nav { 
@@ -1803,25 +1810,155 @@ a:focus-visible {
   }
 }
 
+/* ══════════════════════════════════════════════════════════════
+   ENHANCED MOBILE STYLES (768px and below)
+   ══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Fix top bar for mobile */
   .top-social-bar {
-    display: block;
-    padding: 4px 5%;
+    padding: 8px 3%;
+    font-size: 0.8rem;
   }
   
   .container-top {
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
   }
   
-  body {
-    padding-top: var(--nav-height);
+  .social-part {
+    gap: 10px;
   }
   
+  .social-part a {
+    font-size: 1.1rem;
+  }
+  
+  /* Improve navigation for mobile */
   nav {
-    top: 0;
+    padding: 0 3%;
+    height: 70px;
   }
   
+  .logo img {
+    height: 70px;
+  }
+  
+  /* Mobile menu improvements */
+  .nav-links {
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .nav-links.active {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  /* Make dropdown menus work better on mobile */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    margin-top: 0;
+    padding: 0 0 0 20px;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+  }
+  
+  /* Submenu adjustments */
+  .dropdown-submenu .submenu {
+    position: static;
+    box-shadow: none;
+    margin: 0 0 0 20px;
+    padding: 0;
+    transform: none;
+  }
+  
+  .dropdown-submenu.active .submenu {
+    display: block;
+  }
+  
+  .dropdown-submenu .submenu {
+    display: none;
+  }
+  
+  /* Hero section mobile */
+  .hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+    padding: 0 10px;
+  }
+  
+  /* Adjust padding for mobile */
+  body {
+    padding-top: 70px;
+  }
+  
+  /* Forms on mobile */
+  .contact-form input,
+  .contact-form textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Touch-friendly buttons */
+  button, .btn, a.btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve tap targets */
+  .nav-links a,
+  .dropdown-toggle {
+    padding: 12px 15px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Fix swiper on mobile */
+  .project-swiper {
+    height: 250px;
+    width: 95%;
+  }
+  
+  /* Improve grid layouts */
+  .deliverables-grid,
+  .product-grid,
+  .image-row {
+    gap: 15px;
+  }
+  
+  /* Better mobile tables if any */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Previous mobile styles */
   .mobile-menu-toggle {
     display: block;
   }
@@ -1840,7 +1977,6 @@ a:focus-visible {
   
   .nav-links.active {
     display: flex;
-    animation: slideDown 0.3s ease-out;
   }
   
   @keyframes slideDown {
@@ -1864,10 +2000,6 @@ a:focus-visible {
     width: 100%;
   }
   
-  .hero h1 {
-    font-size: 2rem;
-  }
-  
   .jobs-container {
     margin: 30px 15px;
     padding: 25px 20px;
@@ -1878,7 +2010,30 @@ a:focus-visible {
   }
 }
 
-@media (max-width: 600px) {
+/* ══════════════════════════════════════════════════════════════
+   EXTRA SMALL DEVICES (480px and below)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .contact-form .form-row {
+    gap: 15px;
+  }
+  
+  .map-container {
+    flex-direction: column;
+  }
+  
+  .map-frame {
+    height: 300px;
+  }
+  
   .deliverables-grid {
     grid-template-columns: 1fr;
   }
@@ -1898,28 +2053,22 @@ a:focus-visible {
   }
   
   .project-swiper {
-    height: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .deliverable-card {
-    padding: 20px 15px;
-  }
-  
-  .project-swiper {
     height: 250px;
   }
 }
 
+/* ══════════════════════════════════════════════════════════════
+   LANDSCAPE MOBILE (768px and below in landscape)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    height: 80vh;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LARGER SCREENS
+   ══════════════════════════════════════════════════════════════ */
 @media (min-width: 1200px) {
   .executive-grid {
     grid-template-columns: repeat(4, minmax(260px, 1fr));
@@ -4166,6 +4315,7 @@ const translations = {
   }
 };
 
+
 // ══════════════════════════════════════════════════════════════
 // LANGUAGE HANDLING
 // ══════════════════════════════════════════════════════════════
@@ -4259,63 +4409,140 @@ function showPage(pageId) {
 }
 
 // ══════════════════════════════════════════════════════════════
-// MOBILE MENU
+// MOBILE MENU FUNCTIONS
 // ══════════════════════════════════════════════════════════════
 function toggleMobileMenu() {
-  document.getElementById('main-menu')?.classList.toggle('active');
+  const menu = document.getElementById('main-menu');
+  const body = document.body;
+  
+  if (menu) {
+    menu.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (menu.classList.contains('active')) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = '';
+      // Close all dropdowns when closing menu
+      document.querySelectorAll('.dropdown, .dropdown-submenu').forEach(el => {
+        el.classList.remove('active');
+      });
+    }
+  }
 }
 
 function closeMobileMenu() {
-  document.getElementById('main-menu')?.classList.remove('active');
+  const menu = document.getElementById('main-menu');
+  if (menu) {
+    menu.classList.remove('active');
+    document.body.style.overflow = '';
+    
+    // Close all dropdowns
+    document.querySelectorAll('.dropdown, .dropdown-submenu').forEach(el => {
+      el.classList.remove('active');
+    });
+  }
 }
 
 // ══════════════════════════════════════════════════════════════
-// DROPDOWN MANAGEMENT
+// DROPDOWN MANAGEMENT (Mobile & Desktop)
 // ══════════════════════════════════════════════════════════════
-document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-  toggle.addEventListener('click', e => {
-    e.preventDefault();
-    e.stopPropagation();
-    const dropdown = toggle.closest('.dropdown');
-    const wasActive = dropdown.classList.contains('active');
-    
-    // Close all dropdowns
-    document.querySelectorAll('.dropdown, .dropdown-submenu')
-      .forEach(el => el.classList.remove('active'));
-    
-    if (!wasActive) dropdown.classList.add('active');
+function initDropdowns() {
+  // Handle dropdown toggles
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const dropdown = this.closest('.dropdown');
+      const isMobile = window.innerWidth <= 768;
+      
+      if (isMobile) {
+        // Mobile behavior - toggle on click
+        dropdown.classList.toggle('active');
+      } else {
+        // Desktop behavior - close others, toggle current
+        const wasActive = dropdown.classList.contains('active');
+        
+        // Close all dropdowns
+        document.querySelectorAll('.dropdown').forEach(el => {
+          if (el !== dropdown) {
+            el.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        if (!wasActive) {
+          dropdown.classList.add('active');
+        } else {
+          dropdown.classList.remove('active');
+        }
+      }
+    });
   });
-});
 
-// Close dropdowns when clicking outside
-document.addEventListener('click', e => {
-  if (!e.target.closest('.dropdown')) {
-    document.querySelectorAll('.dropdown, .dropdown-submenu')
-      .forEach(el => el.classList.remove('active'));
+  // Handle submenu toggles (for nested dropdowns)
+  document.querySelectorAll('.submenu-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const submenu = this.closest('.dropdown-submenu');
+      submenu.classList.toggle('active');
+    });
+  });
+
+  // Close dropdowns when clicking outside (desktop only)
+  document.addEventListener('click', function(e) {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (!isMobile && !e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown, .dropdown-submenu').forEach(el => {
+        el.classList.remove('active');
+      });
+    }
+  });
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('main-menu');
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile && 
+      menu?.classList.contains('active') && 
+      !menu.contains(e.target) && 
+      !toggle?.contains(e.target)) {
+    closeMobileMenu();
   }
 });
 
 // ══════════════════════════════════════════════════════════════
-// SCROLL BEHAVIOR
+// SCROLL BEHAVIOR (Enhanced for complete navbar hide)
 // ══════════════════════════════════════════════════════════════
 let lastScrollTop = 0;
+const scrollThreshold = 100;
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
   const nav = document.querySelector('nav');
   const topBar = document.querySelector('.top-social-bar');
-  const backToTopBtn = document.getElementById('backToTop');
   
-  if (currentScroll > lastScrollTop && currentScroll > 150) {
-    nav?.classList.add('hidden');
-    if (topBar) topBar.style.transform = 'translateY(-100%)';
+  if (currentScroll > scrollThreshold) {
+    if (currentScroll > lastScrollTop) {
+      // Scrolling down - hide both
+      nav?.classList.add('hidden');
+      topBar?.classList.add('hidden');
+    } else {
+      // Scrolling up - show both
+      nav?.classList.remove('hidden');
+      topBar?.classList.remove('hidden');
+    }
   } else {
+    // At top of page - always show
     nav?.classList.remove('hidden');
-    if (topBar) topBar.style.transform = 'translateY(0)';
-  }
-  
-  if (backToTopBtn) {
-    backToTopBtn.style.display = currentScroll > 300 ? 'block' : 'none';
+    topBar?.classList.remove('hidden');
   }
   
   lastScrollTop = Math.max(currentScroll, 0);
@@ -4325,12 +4552,27 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Show/hide back to top button
+window.addEventListener('scroll', () => {
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    if (window.pageYOffset > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  }
+}, { passive: true });
+
 // ══════════════════════════════════════════════════════════════
 // FILE UPLOAD DISPLAY
 // ══════════════════════════════════════════════════════════════
 document.getElementById('cvUpload')?.addEventListener('change', function(e) {
   const fileName = e.target.files[0]?.name || 'No file chosen';
-  document.getElementById('file-name').textContent = fileName;
+  const fileNameDisplay = document.getElementById('file-name');
+  if (fileNameDisplay) {
+    fileNameDisplay.textContent = fileName;
+  }
 });
 
 // ══════════════════════════════════════════════════════════════
@@ -4375,11 +4617,60 @@ document.getElementById("jobForm")?.addEventListener("submit", function(e) {
 });
 
 // ══════════════════════════════════════════════════════════════
+// PREVENT ZOOM ON INPUT FOCUS (iOS)
+// ══════════════════════════════════════════════════════════════
+function handleInputFocus() {
+  const inputs = document.querySelectorAll('input, select, textarea');
+  
+  inputs.forEach(el => {
+    el.addEventListener('focus', function() {
+      if (window.innerWidth < 768) {
+        const viewport = document.querySelector('meta[name=viewport]');
+        if (viewport) {
+          viewport.setAttribute('content', 
+            'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+        }
+      }
+    });
+    
+    el.addEventListener('blur', function() {
+      const viewport = document.querySelector('meta[name=viewport]');
+      if (viewport) {
+        viewport.setAttribute('content', 
+          'width=device-width, initial-scale=1.0');
+      }
+    });
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// HANDLE WINDOW RESIZE
+// ══════════════════════════════════════════════════════════════
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    const isMobile = window.innerWidth <= 768;
+    
+    // Close mobile menu if switching to desktop
+    if (!isMobile) {
+      closeMobileMenu();
+    }
+  }, 250);
+});
+
+// ══════════════════════════════════════════════════════════════
 // INITIALIZATION
 // ══════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
   // Set initial language
   setLanguage(currentLang);
+  
+  // Initialize dropdowns
+  initDropdowns();
+  
+  // Handle input focus (iOS zoom prevention)
+  handleInputFocus();
   
   // Initialize AOS
   if (typeof AOS !== 'undefined') {
@@ -4411,5 +4702,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Show main content
   showPage('main-site-content');
+  
+  console.log('✅ Mobile navigation initialized');
 });
 </script>
