@@ -2396,7 +2396,7 @@ a:focus-visible {
       <div class="executive-card">
         <img src="static/assets/member3-image.jpg" alt="shaheer mohammed">
         <h3>Shaheer Mohammed</h3>
-        <span data-key="team-project-position">Head Of General Contracting</span>
+        <span data-key="team-project-position">Head Of Architecture and Construction</span>
       </div>
       <div class="executive-card">
         <img src="static/assets/member1-image.jpg" alt="Jasim Ali">
@@ -2412,7 +2412,7 @@ a:focus-visible {
         <img src="static/assets/member5-image.jpg" alt="Syed Mohammed Sami">
         <h3>Syed Mohammed Sami</h3>
         <span data-key="team-arch-position">Project Architect (M.Arch)</span>
-		<span data-key="team-project-position">Head Of General Contracting</span>
+		<span data-key="team-projects-position">Head Of Sustainable Architecture and AC</span>
       </div>
       <div class="executive-card">
         <img src="static/assets/member6-image.jpg" alt="Mikhil">
@@ -2514,7 +2514,7 @@ a:focus-visible {
 <!-- You would include all your detail pages here (industrial-page, hvac-page, cooling-page, etc.) -->
 <!-- For brevity, I'll show just the careers page as an example -->
 
-<!-- Careers PAGE -->
+<!-- Careers PAGE --> 
 <div id="careers-page" class="page-content">
   <div class="tech-detail-container">
     <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -2524,50 +2524,50 @@ a:focus-visible {
       <form id="jobForm">
         <div class="form-row">
           <div class="form-group">
-            <label for="firstName" data-key="label_first_name">First Name *</label>
-            <input type="text" id="firstName" name="first_name" placeholder="Enter your first name" required data-key="input_first_name">
+            <label for="firstName" data-key="label-first-name">First Name *</label>
+            <input type="text" id="firstName" name="first-name" placeholder="Enter your first name" required data-key="input-first-name">
           </div>
           <div class="form-group">
-            <label for="lastName" data-key="label_last_name">Last Name *</label>
-            <input type="text" id="lastName" name="last_name" placeholder="Enter your last name" required data-key="input_last_name">
+            <label for="lastName" data-key="label-last-name">Last Name *</label>
+            <input type="text" id="lastName" name="last-name" placeholder="Enter your last name" required data-key="input-last-name">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="phone" data-key="label_phone">Contact Number *</label>
-            <input type="tel" id="phone" name="contact_number" placeholder="Enter your phone number" required data-key="input_phone">
+            <label for="phone" data-key="label-phone">Contact Number *</label>
+            <input type="tel" id="phone" name="contact-number" placeholder="Enter your phone number" required data-key="input-phone">
           </div>
           <div class="form-group">
             <label for="email" data-key="label_email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required data-key="input_email">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required data-key="input-email">
           </div>
         </div>
         <div class="form-group">
-          <label for="location" data-key="label_location">Location *</label>
+          <label for="location" data-key="label-location">Location *</label>
           <select id="location" name="location" required>
-            <option value="" data-key="option_select_location">Select Your Location</option>
-            <option value="Riyadh" data-key="option_riyadh">Riyadh</option>
-            <option value="Jeddah">Jeddah</option>
-            <option value="Mecca" selected data-key="option_mecca">Mecca</option>
-            <option value="Dammam">Dammam</option>
-            <option value="Other">Other</option>
+            <option value="" data-key="option-select-location">Select Your Location</option>
+            <option value="Riyadh" data-key="option-riyadh">Riyadh</option>
+            <option value="Jeddah" data-key="option-jeddah" >Jeddah</option>
+            <option value="Mecca" selected data-key="option-mecca">Mecca</option>
+            <option value="Dammam" data-key="option-dammam">Dammam</option>
+            <option value="Other" data-key="option-other">Other</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="prevJob" data-key="label_prev_job">Previous / Current Job</label>
-          <textarea id="prevJob" name="previous_job" rows="4" placeholder="Brief description of your current or most recent job..." data-key="textarea_prev_job"></textarea>
+          <label for="prevJob" data-key="label-prev-job">Previous / Current Job</label>
+          <textarea id="prevJob" name="previous-job" rows="4" placeholder="Brief description of your current or most recent job..." data-key="textarea-prev-job"></textarea>
         </div>
         <div class="form-group">
-          <label for="cvUpload" data-key="label_cv">Upload CV (PDF only, max 5MB)</label>
+          <label for="cvUpload" data-key="label-cv">Upload CV (PDF only, max 5MB)</label>
           <div class="custom-file-upload">
-            <input type="file" id="cvUpload" name="cv_file" accept=".pdf" data-key="input_cv">
+            <input type="file" id="cvUpload" name="cv-file" accept=".pdf" data-key="input-cv">
             <label for="cvUpload" class="file-btn">
               <i class="fas fa-upload"></i> Choose CV File
             </label>
             <span id="file-name" class="file-name-display">No file chosen</span>
           </div>
         </div>
-        <button type="submit" data-key="button_submit">Submit Application</button>
+        <button type="submit" data-key="button-submit">Submit Application</button>
       </form>
     </div>
   </div>
@@ -2681,7 +2681,7 @@ a:focus-visible {
     </ul>
     <div class="image-row">
       <div class="image-item">
-        <img src="static/assets/Tube.jpg" alt="Tube Ice" class="square-img">
+        <img src="static/assets/tube.jpg" alt="Tube Ice" class="square-img">
         <div class="image-caption" data-key="cooling-img-1">Tube Ice Plant</div>
       </div>
       <div class="image-item">
@@ -3163,87 +3163,87 @@ a:focus-visible {
         <!-- Row 1: First Name + Last Name -->
         <div class="form-row">
           <div class="form-group">
-            <label for="firstName" data-key="label_first_name">First Name *</label>
+            <label for="firstName" data-key="label-first-name">First Name *</label>
             <input
               type="text"
               id="firstName"
-              name="first_name"
+              name="first-name"
               placeholder="Enter your first name"
               required
-              data-key="input_first_name"
+              data-key="input-first-name"
             >
           </div>
           <div class="form-group">
-            <label for="lastName" data-key="label_last_name">Last Name *</label>
+            <label for="lastName" data-key="label-last-name">Last Name *</label>
             <input
               type="text"
               id="lastName"
-              name="last_name"
+              name="last-name"
               placeholder="Enter your last name"
               required
-              data-key="input_last_name"
+              data-key="input-last-name"
             >
           </div>
         </div>
         <!-- Row 2: Contact Number + Email -->
         <div class="form-row">
           <div class="form-group">
-            <label for="phone" data-key="label_phone">Contact Number *</label>
+            <label for="phone" data-key="label-phone">Contact Number *</label>
             <input
               type="tel"
               id="phone"
-              name="contact_number"
+              name="contact-number"
               placeholder="Enter your phone number"
               required
-              data-key="input_phone"
+              data-key="input-phone"
             >
           </div>
           <div class="form-group">
-            <label for="email" data-key="label_email">Email *</label>
+            <label for="email" data-key="label-email">Email *</label>
             <input
               type="email"
               id="email"
               name="email"
               placeholder="Enter your email"
               required
-              data-key="input_email"
+              data-key="input-email"
             >
           </div>
         </div>
         <!-- Location (full width) -->
         <div class="form-group">
-          <label for="location" data-key="label_location">Location *</label>
+          <label for="location" data-key="label-location">Location *</label>
           <select id="location" name="location" required>
-            <option value="" data-key="option_select_location">Select Your Location</option>
-            <option value="Riyadh" data-key="option_riyadh">Riyadh</option>
-            <option value="Jeddah">Jeddah</option>
-            <option value="Mecca" selected data-key="option_mecca">Mecca</option>
-            <option value="Dammam">Dammam</option>
-            <option value="Other">Other</option>
+            <option value="" data-key="option-select-location">Select Your Location</option>
+            <option value="Riyadh" data-key="option-riyadh">Riyadh</option>
+            <option value="Jeddah" data-key="option-jeddah">Jeddah</option>
+            <option value="Mecca" selected data-key="option-mecca">Mecca</option>
+            <option value="Dammam"data-key="option-dammam">Dammam</option>
+            <option value="Other" data-key="option-other">Other</option>
           </select>
         </div>
         <!-- Previous Job / Experience description -->
         <div class="form-group">
-          <label for="prevJob" data-key="label_prev_job">Previous / Current Job</label>
+          <label for="prevJob" data-key="label-prev-job">Previous / Current Job</label>
           <textarea
             id="prevJob"
-            name="previous_job"
+            name="previous-job"
             rows="4"
             placeholder="Brief description of your current or most recent job..."
-            data-key="textarea_prev_job"
+            data-key="textarea-prev-job"
           ></textarea>
         </div>
         <!-- CV Upload -->
         <!-- CV Upload - Styled like submit button -->
         <div class="form-group">
-          <label for="cvUpload" data-key="label_cv">Upload CV (PDF only, max 5MB)</label>
+          <label for="cvUpload" data-key="label-cv">Upload CV (PDF only, max 5MB)</label>
           <div class="custom-file-upload">
             <input
               type="file"
               id="cvUpload"
-              name="cv_file"
+              name="cv-file"
               accept=".pdf"
-              data-key="input_cv"
+              data-key="input-cv"
             >
             <label for="cvUpload" class="file-btn">
               <i class="fas fa-upload"></i> Choose CV File
@@ -3252,7 +3252,7 @@ a:focus-visible {
           </div>
         </div>
         <!-- Submit Button -->
-        <button type="submit" data-key="button_submit">Submit Application</button>
+        <button type="submit" data-key="button-submit">Submit Application</button>
       </form>
     </div>
   </div>
@@ -3705,8 +3705,9 @@ const translations = {
 		'team-sales-position': 'National Sales Manager',
 		'team-customer-position': 'Customer Relation Manager',
 		'team-accounts-position' : 'Head Of Buisness Development',
-		'team-project-position': 'Head Of General Contracting',
+		'team-project-position': 'Head Of Architecture And Construction',
 		'team-arch-position': 'Project Architect(M.Arch)',
+		'team-projects-position':'Head Of Sustainable Architecture and AC',
 		'team-cc-position' : 'Concrete Cooling Manager',
 		'team-mep-position' : 'MEP Engineer',
 		'team-HVAC-position' : 'Head Of HVAC and MEP',
@@ -3953,6 +3954,28 @@ const translations = {
 		'production-img-1':'Branding Productions',
 		'production-terms-desc':'Our state-of-the-art equipment facilitates a seamless design-to-production workflow under one roof. We deliver high-quality, Scalable production with affordable pricing and timely delivery with professional installation.',
     
+		'career-heading': 'Join Our Team',
+		'career-introtext': 'We are looking for passionate and ambitious talents who want to work with a team of experts and professionals.',
+		'label-first-name': 'First Name *',
+		'input-first-name': 'Enter your first name',
+		'label-last-name': 'Last Name *',
+		'input-last-name': 'Enter your last name',
+		'label-phone': 'Contact Number *',
+		'input-phone': 'Enter your phone number',
+		'label-email': 'Email *',
+		'input-email': 'Enter your email',
+		'label-location': 'Location *',
+		'option-select-location': 'Select Your Location',
+		'option-riyadh': 'Riyadh',
+		'option-jeddah': 'Jeddah',
+		'option-mecca': 'Mecca',
+		'option-dammam': 'Dammam',
+		'option-other': 'Other',
+		'label-prev-job': 'Previous / Current Job',
+		'textarea-prev-job': 'Brief description of your current or most recent job...',
+		'label-cv': 'Upload CV (PDF only, max 5MB)',
+		'input-cv': 'Choose CV File',
+		'button-submit': 'Submit Application',
 	// ... Add ALL other English translations
   },
   ar: {
@@ -4064,8 +4087,9 @@ const translations = {
 		'team-sales-position': 'مدير المبيعات الوطني',
 		'team-customer-position': 'مدير علاقات العملاء',
 		'team-accounts-position': 'رئيس تطوير الأعمال',
-		'team-project-position': 'رئيس قسم المقاولات العامة ماجستير في العمارة',
+		'team-project-position': 'رئيس قسم الهندسة المعمارية والإنشاءات',
 		'team-arch-position': 'مهندس معماري للمشاريع',
+		'team-projects-position': 'رئيس قسم الهندسة المعمارية المستدامة والإنشاءات',
 		'team-cc-position' : 'مدير أنظمة تبريد الخرسانة',
 		'team-mep-position' : 'مهندس الأعمال الكهروميكانيكية (MEP)',
 		'team-HVAC-position' : 'رئيس قسم التكييف والأعمال الكهروميكانيكية (HVAC & MEP)',
@@ -4311,6 +4335,29 @@ const translations = {
 		'production-img-1':'إنتاجات العلامات التجارية',
 		'production-terms-desc':'تمكّن معداتنا الحديثة والمتطورة من تنفيذ سير عمل سلس من التصميم إلى الإنتاج تحت سقف واحد. نحن نوفر إنتاجًا عالي الجودة وقابل للتطوير بأسعار مناسبة وتسليم في الوقت المحدد مع تركيب احترافي.',
 		 
+		 
+		'career-heading': 'انضم إلى فريقنا',
+		'career-introtext': 'نحن نبحث عن مواهب شغوفة وطموحة ترغب في العمل مع فريق من الخبراء والمحترفين.',
+		'label-first-name': 'الاسم الأول *',
+		'input-first-name': 'أدخل اسمك الأول',
+		'label-last-name': 'اسم العائلة *',
+		'input-last-name': 'أدخل اسم العائلة',
+		'label-phone': 'رقم التواصل *',
+		'input-phone': 'أدخل رقم هاتفك',
+		'label-email': 'البريد الإلكتروني *',
+		'input-email': 'أدخل بريدك الإلكتروني',
+		'label-location': 'الموقع *',
+		'option-select-location': 'اختر موقعك',
+		'option-riyadh': 'الرياض',
+		'option-jeddah': 'جدة',
+		'option-mecca': 'مكة المكرمة',
+		'option-dammam': 'الدمام',
+		'option-other': 'أخرى',
+		'label-prev-job': 'الوظيفة السابقة / الحالية',
+		'textarea-prev-job': 'وصف موجز لوظيفتك الحالية أو الأخيرة...',
+		'label-cv': 'تحميل السيرة الذاتية (PDF فقط، بحد أقصى 5 ميجابايت)',
+		'input-cv': 'اختر ملف السيرة الذاتية',
+		'button-submit': 'إرسال الطلب',
     // ... Add ALL other Arabic translations
   }
 };
