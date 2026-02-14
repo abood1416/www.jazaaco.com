@@ -2292,10 +2292,10 @@
       <div style="margin-top: 40px; text-align: center;">
         <h3 style="margin-bottom: 20px;">Company </h3>
 
-        <video width="720" controls style="border-radius: 12px; max-width: 100%;">
-          <source src="{{ url_for('static', filename='hero-video/vid1.mp4') }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+       <video autoplay muted loop playsinline class="hero-video">
+        <source src="static/videos/hero-video.mp4" type="video/mp4">
+        <img src="static/assets/hero-fallback.jpg" alt="Hero Image">
+      </video>
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
