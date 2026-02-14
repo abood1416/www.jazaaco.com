@@ -4705,32 +4705,41 @@
     // SCROLL BEHAVIOR
     // ══════════════════════════════════════════════════════════════
     let lastScrollTop = 0;
+const scrollThreshold = 100;
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      const nav = document.querySelector('nav');
-      const topBar = document.querySelector('.top-social-bar');
-      const backToTopBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  const nav = document.querySelector('nav');
+  const topBar = document.querySelector('.top-social-bar');
+  const backToTopBtn = document.getElementById('backToTop');
 
-      if (currentScroll > lastScrollTop && currentScroll > 150) {
-        nav?.classList.add('hidden');
-        if (topBar) topBar.style.transform = 'translateY(-100%)';
-      } else {
-        nav?.classList.remove('hidden');
-        if (topBar) topBar.style.transform = 'translateY(0)';
-      }
+  if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+    // 👇 THIS CODE HIDES THE NAVBAR WHEN SCROLLING DOWN
+    nav?.classList.add('hidden');
+    nav?.classList.add('nav-at-top');
+    topBar?.classList.add('hidden');
+    closeMobileMenu();
+  } else if (currentScroll < lastScrollTop) {
+    // 👇 THIS CODE SHOWS THE NAVBAR WHEN SCROLLING UP
+    nav?.classList.remove('hidden');
+    topBar?.classList.remove('hidden');
+    
+    if (currentScroll <= scrollThreshold) {
+      nav?.classList.remove('nav-at-top');
+    }
+  }
 
-      if (backToTopBtn) {
-        backToTopBtn.style.display = currentScroll > 300 ? 'block' : 'none';
-      }
+  if (backToTopBtn) {
+    backToTopBtn.style.display = currentScroll > 300 ? 'block' : 'none';
+  }
 
-      lastScrollTop = Math.max(currentScroll, 0);
-    }, { passive: true });
+  lastScrollTop = Math.max(currentScroll, 0);
+}, { passive: true });
+
 
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-
     // ══════════════════════════════════════════════════════════════
     // FILE UPLOAD DISPLAY
     // ══════════════════════════════════════════════════════════════
