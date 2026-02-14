@@ -1841,153 +1841,256 @@
       }
     }
 
-    /* ══════════════════════════════════════════════════════════════
+ /* ══════════════════════════════════════════════════════════════
    RESPONSIVE DESIGN
    ══════════════════════════════════════════════════════════════ */
-    @media (max-width: 1024px) {
-      .deliverables-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+@media (max-width: 1024px) {
+  .deliverables-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-      .executive-grid {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      }
+  .executive-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .top-social-bar {
+    font-size: 0.85rem;
+  }
+
+  .social-part a {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* KEEP THE TOP BAR VISIBLE */
+  .top-social-bar {
+    display: flex;
+    padding: 6px 5%;
+    font-size: 0.8rem;
+  }
+
+  .container-top {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  /* Adjust body padding to account for both bars */
+  body {
+    padding-top: calc(var(--nav-height) + var(--topbar-height));
+  }
+
+  /* Navigation stays below top bar */
+  nav {
+    top: var(--topbar-height);
+    padding: 0 3%;
+  }
+
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: block;
+    z-index: 1002;
+  }
+
+  /* Logo smaller on mobile */
+  .logo img {
+    height: 70px;
+  }
+
+  /* Mobile menu styling */
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: calc(var(--nav-height) + var(--topbar-height));
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-height: calc(100vh - var(--nav-height) - var(--topbar-height));
+    overflow-y: auto;
+    z-index: 1001;
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  /* Mobile dropdown styling */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 10px 0;
+    border-left: 2px solid var(--primary);
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  [dir="rtl"] .dropdown-menu {
+    margin-left: 0;
+    margin-right: 20px;
+    border-left: none;
+    border-right: 2px solid var(--primary);
+  }
+
+  .dropdown.active .dropdown-menu {
+    transform: none;
+  }
+
+  .dropdown-submenu .submenu {
+    position: static;
+    margin-left: 20px;
+    margin-top: 10px;
+    box-shadow: none;
+    border-left: 2px solid #ddd;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  [dir="rtl"] .dropdown-submenu .submenu {
+    margin-left: 0;
+    margin-right: 20px;
+    border-left: none;
+    border-right: 2px solid #ddd;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
     }
-
-    @media (max-width: 992px) {
-      .top-social-bar {
-        font-size: 0.85rem;
-      }
-
-      .social-part a {
-        font-size: 1.25rem;
-      }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
 
-    @media (max-width: 768px) {
-      .top-social-bar {
-        display: block;
-        padding: 4px 5%;
-      }
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
 
-      .container-top {
-        flex-direction: column;
-        gap: 8px;
-      }
+  .form-row .form-group {
+    flex: none;
+    width: 100%;
+  }
 
-      body {
-        padding-top: var(--nav-height);
-      }
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-      nav {
-        top: 0;
-      }
+  .jobs-container {
+    margin: 30px 15px;
+    padding: 25px 20px;
+  }
 
-      .mobile-menu-toggle {
-        display: block;
-      }
+  .jobs-container h1 {
+    font-size: 1.9rem;
+  }
 
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
+  /* Make social icons slightly smaller on mobile */
+  .social-part {
+    gap: 10px;
+  }
 
-      .nav-links.active {
-        display: flex;
-        animation: slideDown 0.3s ease-out;
-      }
+  .social-part a {
+    font-size: 1.1rem;
+  }
 
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
+  /* Hide language switch on very small screens to save space */
+  .lang-part {
+    font-size: 0.75rem;
+  }
+}
 
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+@media (max-width: 600px) {
+  .deliverables-grid {
+    grid-template-columns: 1fr;
+  }
 
-      .form-row {
-        flex-direction: column;
-        gap: 20px;
-      }
+  .executive-card {
+    max-width: 340px;
+    padding: 24px 18px;
+  }
 
-      .form-row .form-group {
-        flex: none;
-        width: 100%;
-      }
+  .executive-card img {
+    width: 130px;
+    height: 130px;
+  }
 
-      .hero h1 {
-        font-size: 2rem;
-      }
+  .product-card img {
+    height: 130px;
+  }
 
-      .jobs-container {
-        margin: 30px 15px;
-        padding: 25px 20px;
-      }
+  .project-swiper {
+    height: 300px;
+  }
 
-      .jobs-container h1 {
-        font-size: 1.9rem;
-      }
-    }
+  /* Even more compact on smaller screens */
+  nav {
+    padding: 0 2%;
+    height: 70px;
+  }
 
-    @media (max-width: 600px) {
-      .deliverables-grid {
-        grid-template-columns: 1fr;
-      }
+  .logo img {
+    height: 60px;
+  }
 
-      .executive-card {
-        max-width: 340px;
-        padding: 24px 18px;
-      }
+  :root {
+    --nav-height: 70px;
+  }
+}
 
-      .executive-card img {
-        width: 130px;
-        height: 130px;
-      }
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
 
-      .product-card img {
-        height: 130px;
-      }
+  .section-title {
+    font-size: 1.8rem;
+  }
 
-      .project-swiper {
-        height: 300px;
-      }
-    }
+  .deliverable-card {
+    padding: 20px 15px;
+  }
 
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
+  .project-swiper {
+    height: 250px;
+  }
 
-      .section-title {
-        font-size: 1.8rem;
-      }
+  /* Super compact mode */
+  .logo img {
+    height: 50px;
+  }
 
-      .deliverable-card {
-        padding: 20px 15px;
-      }
+  nav {
+    height: 60px;
+  }
 
-      .project-swiper {
-        height: 250px;
-      }
-    }
+  :root {
+    --nav-height: 60px;
+  }
 
-    @media (min-width: 1200px) {
-      .executive-grid {
-        grid-template-columns: repeat(4, minmax(260px, 1fr));
-      }
-    }
-	
+  .mobile-menu-toggle {
+    font-size: 24px;
+    padding: 8px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .executive-grid {
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
+  }
+}
 	
 	 /* ══════════════════════════════════════════════════════════════
    SUCCESS POPUP MODALS
@@ -2536,7 +2639,7 @@
           <div class="executive-card">
             <img src="static/assets/member3-image.jpg" alt="shaheer mohammed">
             <h3>Shaheer Mohammed</h3>
-            <span data-key="team-project-position">Head Of General Contracting</span>
+            <span data-key="team-project-position">Head Of General Contracting and Construciton</span>
           </div>
           <div class="executive-card">
             <img src="static/assets/member1-image.jpg" alt="Jasim Ali">
@@ -2552,7 +2655,7 @@
             <img src="static/assets/member5-image.jpg" alt="Syed Mohammed Sami">
             <h3>Syed Mohammed Sami</h3>
             <span data-key="team-arch-position">Project Architect (M.Arch)</span>
-            <span data-key="team-project-position">Head Of General Contracting</span>
+            <span data-key="team-architecture-position">Head Of Sustainable Architecture </span>
           </div>
           <div class="executive-card">
             <img src="static/assets/member6-image.jpg" alt="Mikhil">
@@ -3964,11 +4067,13 @@
         'team-accounts-position': 'Head Of Buisness Development',
         'team-project-position': 'Head Of General Contracting',
         'team-arch-position': 'Project Architect(M.Arch)',
+		'team-architecture-position': 'Head Of Sustainable Architecture',
         'team-cc-position': 'Concrete Cooling Manager',
         'team-mep-position': 'MEP Engineer',
         'team-HVAC-position': 'Head Of HVAC and MEP',
         'team-hr-position': 'HR',
         'team-IT-position': 'IT and Sales Engineer',
+		'team-marketing-position': 'Sales And Marketing Strategist',
         'team-hcc-position': 'Head Of Concrete Cooling',
         'team-technical-position': 'Techniacal Manager',
         'team-eng-position': 'Site Engineer',
@@ -4323,6 +4428,7 @@
         'team-accounts-position': 'رئيس تطوير الأعمال',
         'team-project-position': 'رئيس قسم المقاولات العامة ماجستير في العمارة',
         'team-arch-position': 'مهندس معماري للمشاريع',
+		'team-architecture-position': 'رئيس قسم العمارة المستدامة',
         'team-cc-position': 'مدير أنظمة تبريد الخرسانة',
         'team-mep-position': 'مهندس الأعمال الكهروميكانيكية (MEP)',
         'team-HVAC-position': 'رئيس قسم التكييف والأعمال الكهروميكانيكية (HVAC & MEP)',
