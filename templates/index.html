@@ -2411,12 +2411,15 @@
           <a class="dropdown-toggle" data-key="nav-projects">Projects</a>
           <div class="dropdown-menu">
             <a href="#projects" onclick="showPage('main-site-content')" data-key="nav-projects">Projects</a>
-            <a href="#almarai-page" onclick="showPage('almarai-page')" data-key="nav-project-almarai">Almarai
+            
+			<a href="#nahdi-page" onclick="showPage('nahdi-page')" data-key="nav-project-nahdi">Nahdi Project</a>
+			<a href="#petromin-page" onclick="showPage('petromin-page')" data-key="nav-project-petromin">Petromin Project</a>
+			<a href="#nissan-page" onclick="showPage('nissan-page')" data-key="nav-project-nissan">Nissan Project</a>
+			<a href="#almarai-page" onclick="showPage('almarai-page')" data-key="nav-project-almarai">Almarai
               Project</a>
             <a href="#acino-page" onclick="showPage('acino-page')" data-key="nav-project-acino">Acino Project</a>
             <a href="#event-page" onclick="showPage('booths-page')" data-key="nav-project-booth">Event Booth</a>
             <a href="#zamil-page" onclick="showPage('zamil-page')" data-key="nav-project-zamil">Zamil HVAC Project</a>
-            <a href="#nahdi-page" onclick="showPage('nahdi-page')" data-key="nav-project-nahdi">Nahdi Project</a>
             <a href="#flag-page" onclick="showPage('flag-page')" data-key="nav-project-flag">Flag Project</a>
           </div>
         </li>
@@ -2558,6 +2561,31 @@
         <h2 class="section-title" data-key="projects-title">Our Projects</h2>
         <div
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px;">
+		  
+		  <div class="project-card" onclick="showPage('nahdi-page')">
+            <img src="static/assets/nahdi-image.jpg" alt="Project 5">
+            <div>
+              <h3 data-key="project-5-title">Nahdi Project</h3>
+              <p data-key="project-5-desc">Renovation buildup</p>
+              <small data-key="project-5-date">2024–2025</small>
+            </div>
+          </div>
+		  <div class="project-card" onclick="showPage('petromin-page')">
+            <img src="static/assets/Petromin-image.jpg" alt="Project 7">
+            <div>
+              <h3 data-key="project-7-title">Petromin</h3>
+              <p data-key="project-7-desc">Construction of Petrol Pump and service stations</p>
+              <small data-key="project-7-date">2024–2025</small>
+            </div>
+          </div>
+		  <div class="project-card" onclick="showPage('nissan-page')">
+            <img src="static/assets/Nissan-image.jpg" alt="Project 8">
+            <div>
+              <h3 data-key="project-8-title">Nissan</h3>
+              <p data-key="project-8-desc">Renovation of Showroom</p>
+              <small data-key="project-8-date">2024–2025</small>
+            </div>
+          </div>
           <div class="project-card" onclick="showPage('almarai-page')">
             <img src="static/assets/almarai3-image.jpg" alt="Project 1">
             <div>
@@ -2590,14 +2618,7 @@
               <small data-key="project-4-date">2024–2025</small>
             </div>
           </div>
-          <div class="project-card" onclick="showPage('nahdi-page')">
-            <img src="static/assets/nahdi-image.jpg" alt="Project 5">
-            <div>
-              <h3 data-key="project-5-title">Nahdi Project</h3>
-              <p data-key="project-5-desc">Renovation buildup</p>
-              <small data-key="project-5-date">2024–2025</small>
-            </div>
-          </div>
+          
           <div class="project-card" onclick="showPage('flag-page')">
             <img src="static/assets/flag-image.jpg" alt="Project 6">
             <div>
@@ -3652,6 +3673,149 @@
   </div>
 
   <!-- PROJECTS PAGES -->
+  
+  <div id="nahdi-page" class="page-content"> <!-- keep your id -->
+    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+      <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
+      <!-- Swiper Image Slider (exactly like the example you shared) -->
+      <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
+        <div class="swiper-wrapper" id="marjan-swiper-wrapper">
+          <div class="swiper-slide swiper-slide-active" role="group" aria-label="1/4">
+            <img src="static/assets/nahdi1-image.jpg" alt="nahdi">
+          </div>
+          <div class="swiper-slide" role="group" aria-label="2/4">
+            <img src="static/assets/nahdi2-image.jpg" alt="nahdi">
+          </div>
+        </div>
+        <!-- Navigation arrows -->
+        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
+        <!-- Pagination bullets -->
+        <div
+          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+        </div>
+      </div>
+      <!-- Project Information (adapted from your provided HTML) -->
+      <div class="project-info">
+        <h1><b data-key="nahdih">Nahdi Pharmacy</b></h1>
+        <p data-key="nahdip">Complete renovation of the pharmacy exterior.</p>
+        <div class="project-meta">
+          <p><strong data-key="client-label">Client:</strong> <span data-key="nahdi-c">Nahdi</span></p>
+          <p><strong data-key="status-label">Status:</strong> <span data-key="completed">Completed</span></p>
+          <p><strong data-key="scope-label">Scope:</strong> <span data-key="nahdi-s">Restored and renovated complete
+              pharmacy.</span></p>
+        </div>
+        <!-- Optional: You can add more sections like your manpower one had -->
+        <!-- <h3>Key Highlights</h3>
+      <ul>
+        <li>Prefabricated modular buildings for rapid deployment</li>
+        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
+        <li>Site development including roads, parking & fencing</li>
+      </ul> -->
+      </div>
+    </div>
+  </div>
+  
+  <div id="petromin-page" class="page-content"> <!-- keep your id -->
+    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+      <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
+      <!-- Swiper Image Slider (exactly like the example you shared) -->
+      <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
+        <div class="swiper-wrapper" id="marjan-swiper-wrapper">
+          
+          <div class="swiper-slide" role="group" aria-label="2/4">
+            <img src="static/assets/petromin7-image.jpg" alt="petromin">
+          </div>
+		  <div class="swiper-slide" role="group" aria-label="3/4">
+            <img src="static/assets/petromin6-image.jpg" alt="petromin">
+          </div>
+		  <div class="swiper-slide" role="group" aria-label="4/4">
+            <img src="static/assets/petromin2-image.jpg" alt="petromin">
+          </div>
+		  <div class="swiper-slide" role="group" aria-label="5/4">
+            <img src="static/assets/petromin3-image.jpg" alt="petromin">
+          </div>
+		  <div class="swiper-slide" role="group" aria-label="6/4">
+            <img src="static/assets/petromin4-image.jpg" alt="petromin">
+          </div>
+        </div>
+        <!-- Navigation arrows -->
+        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
+        <!-- Pagination bullets -->
+        <div
+          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+        </div>
+      </div>
+      <!-- Project Information (adapted from your provided HTML) -->
+      <div class="project-info">
+        <h1><b data-key="nahdih">Petromin Pump</b></h1>
+        <p data-key="nahdip">Complete Construciton of Petrol pump and car services stations.</p>
+        <div class="project-meta">
+          <p><strong data-key="client-label">Client:</strong> <span data-key="nahdi-c">Petromin</span></p>
+          <p><strong data-key="status-label">Status:</strong> <span data-key="completed">Completed</span></p>
+          <p><strong data-key="scope-label">Scope:</strong> <span data-key="nahdi-s">Complete Construction of petrolpump.</span></p>
+        </div>
+        <!-- Optional: You can add more sections like your manpower one had -->
+        <!-- <h3>Key Highlights</h3>
+      <ul>
+        <li>Prefabricated modular buildings for rapid deployment</li>
+        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
+        <li>Site development including roads, parking & fencing</li>
+      </ul> -->
+      </div>
+    </div>
+  </div>
+  
+  <div id="nissan-page" class="page-content"> <!-- keep your id -->
+    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+      <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
+      <!-- Swiper Image Slider (exactly like the example you shared) -->
+      <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
+        <div class="swiper-wrapper" id="marjan-swiper-wrapper">
+          
+          <div class="swiper-slide" role="group" aria-label="1/4">
+            <img src="static/assets/nissan1-image.jpg" alt="nissan">
+          </div>
+		  <div class="swiper-slide" role="group" aria-label="2/4">
+            <img src="static/assets/nissan2-image.jpg" alt="nissan">
+          </div>
+		  <div class="swiper-slide" role="group" aria-label="3/4">
+            <img src="static/assets/nissan3-image.jpg" alt="nissan">
+          </div>
+		  <div class="swiper-slide" role="group" aria-label="4/4">
+            <img src="static/assets/nissan4-image.jpg" alt="nissan">
+          </div>
+		 
+        </div>
+        <!-- Navigation arrows -->
+        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
+        <!-- Pagination bullets -->
+        <div
+          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+        </div>
+      </div>
+      <!-- Project Information (adapted from your provided HTML) -->
+      <div class="project-info">
+        <h1><b>Nissan Showroom</b></h1>
+        <p>Renovation of Showroom.</p>
+        <div class="project-meta">
+          <p><strong data-key="client-label">Client:</strong> <span>Nissan</span></p>
+          <p><strong data-key="status-label">Status:</strong> <span>Completed</span></p>
+          <p><strong data-key="scope-label">Scope:</strong> <span>Complete Renovation of Nissan Showroom in madina.</span></p>
+        </div>
+        <!-- Optional: You can add more sections like your manpower one had -->
+        <!-- <h3>Key Highlights</h3>
+      <ul>
+        <li>Prefabricated modular buildings for rapid deployment</li>
+        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
+        <li>Site development including roads, parking & fencing</li>
+      </ul> -->
+      </div>
+    </div>
+  </div>
+  
   <div id="almarai-page" class="page-content"> <!-- keep your id -->
     <div class="tech-detail-container"> <!-- ← use this class everywhere -->
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3849,47 +4013,7 @@
       </div>
     </div>
   </div>
-  <div id="nahdi-page" class="page-content"> <!-- keep your id -->
-    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
-      <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
-      <!-- Swiper Image Slider (exactly like the example you shared) -->
-      <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
-        <div class="swiper-wrapper" id="marjan-swiper-wrapper">
-          <div class="swiper-slide swiper-slide-active" role="group" aria-label="1/4">
-            <img src="static/assets/nahdi1-image.jpg" alt="nahdi">
-          </div>
-          <div class="swiper-slide" role="group" aria-label="2/4">
-            <img src="static/assets/nahdi2-image.jpg" alt="nahdi">
-          </div>
-        </div>
-        <!-- Navigation arrows -->
-        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
-        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
-        <!-- Pagination bullets -->
-        <div
-          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
-        </div>
-      </div>
-      <!-- Project Information (adapted from your provided HTML) -->
-      <div class="project-info">
-        <h1><b data-key="nahdih">Nahdi Pharmacy</b></h1>
-        <p data-key="nahdip">Complete renovation of the pharmacy exterior.</p>
-        <div class="project-meta">
-          <p><strong data-key="client-label">Client:</strong> <span data-key="nahdi-c">Nahdi</span></p>
-          <p><strong data-key="status-label">Status:</strong> <span data-key="completed">Completed</span></p>
-          <p><strong data-key="scope-label">Scope:</strong> <span data-key="nahdi-s">Restored and renovated complete
-              pharmacy.</span></p>
-        </div>
-        <!-- Optional: You can add more sections like your manpower one had -->
-        <!-- <h3>Key Highlights</h3>
-      <ul>
-        <li>Prefabricated modular buildings for rapid deployment</li>
-        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
-        <li>Site development including roads, parking & fencing</li>
-      </ul> -->
-      </div>
-    </div>
-  </div>
+  
 
 
   <div id="flag-page" class="page-content"> <!-- keep your id -->
@@ -4048,7 +4172,9 @@
         'nav-fire-services': 'Fire & Safety Services',
         'nav-manpower': 'Manpower Supply Services',
         'nav-rentals': 'Rental Heavy Equipments Services',
-        'nav-project-almarai': 'Almarai Project',
+		'nav-project-petromin':'Petromin Project',
+        'nav-project-nissan':'Nissan Project',
+		'nav-project-almarai': 'Almarai Project',
         'nav-project-acino': 'Acino Project',
         'nav-project-booth': ' Event Booth',
         'nav-project-zamil': ' Zamil HVAC Project',
@@ -4115,6 +4241,12 @@
         'project-6-title': 'Flag Project',
         'project-6-desc': 'Interior Renovation.',
         'project-6-date': '2024-2025',
+		'project-7-title': 'Petromin Project',
+        'project-7-desc': 'Construction of Petrol Pump and service stations.',
+        'project-7-date': '2024-2025',
+		'project-8-title': 'Nissan Project',
+        'project-8-desc': 'Renovation of Showroom.',
+        'project-8-date': '2024-2025',
         'project-cta': 'Start Your Project With Us',
         'partners-title': 'Our Partners',
         'clients-title': 'Our Clients',
@@ -4403,6 +4535,8 @@
         'nav-fire-services': 'خدمات الحريق والسلامة',
         'nav-manpower': ' خدمات توريد قوى عاملة  ',
         'nav-rentals': 'خدمات  تأجير معدات ثقيلة ',
+		'nav-project-nissan':'مشروع نيسان',
+		'nav-project-petromin':'مشروع بترومين',
         'nav-project-almarai': 'مشروع المراعي',
         'nav-project-acino': 'مشروع أسينو',
         'nav-project-booth': 'أجنحة المعارض',
@@ -4470,6 +4604,12 @@
         'project-6-title': 'مشروع فلاق',
         'project-6-desc': 'تجديد داخلي.',
         'project-6-date': '2024-2025',
+		'project-7-title': 'مشروع بترومين',
+		'project-7-desc': 'إنشاء محطة وقود ومحطات خدمة',
+		'project-7-date': '2024-2025',
+		'project-8-title': 'مشروع نيسان',
+		'project-8-desc': 'تجديد صالة العرض',
+		'project-8-date': '2024-2025',
         'nahdih': ' Nahdi Pharmacy',
         'nahdip': 'Complete renovation of the pharmacy exterior.',
         'nahdi-c': 'Nahdi',
@@ -4741,7 +4881,8 @@
         // ... Add ALL other Arabic translations
       }
     };
-
+	
+	
     // ══════════════════════════════════════════════════════════════
     // LANGUAGE HANDLING
     // ══════════════════════════════════════════════════════════════
