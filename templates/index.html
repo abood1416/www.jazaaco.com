@@ -1703,22 +1703,23 @@
     /* ══════════════════════════════════════════════════════════════
    BACK TO TOP BUTTON
    ══════════════════════════════════════════════════════════════ */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 50px;
-      cursor: pointer;
-      display: none;
-      z-index: 999;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      font-size: 1.2rem;
-    }
+	#backToTop {
+	  position: fixed;
+	  bottom: 30px;
+	  left: 30px;
+	  right: auto;
+	  background: var(--primary);
+	  color: white;
+	  border: none;
+	  padding: 12px 18px;
+	  border-radius: 50px;
+	  cursor: pointer;
+	  display: none;
+	  z-index: 999;
+	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	  transition: all 0.3s ease;
+	  font-size: 1.2rem;
+	}
 
     #backToTop:hover {
       background: #003d7a;
@@ -1730,10 +1731,10 @@
       transform: translateY(-2px);
     }
 
-    [dir="rtl"] #backToTop {
-      right: auto;
-      left: 30px;
-    }
+	[dir="rtl"] #backToTop {
+		left: auto;
+		right: 30px;
+	}
 
     /* ══════════════════════════════════════════════════════════════
    FOOTER
@@ -2322,7 +2323,6 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 	
-	
 /* ── Chat Toggle Button ── */
 #jz-chat-btn {
   position: fixed;
@@ -2371,9 +2371,10 @@
 @keyframes jzPulse {
   0%,100% { transform: scale(1); }
   50%      { transform: scale(1.25); }
-}
- 
-/* ── Chat Window ── */
+}	
+	
+	
+	/* ── Chat Window ── */
 #jz-chat-window {
   position: fixed;
   bottom: 98px;
@@ -2638,6 +2639,16 @@
 .jz-powered a { color: #bbb; text-decoration: none; }
 .jz-powered a:hover { color: var(--primary); }	
 
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    .section-title {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif !important;
+    }
+	
+	
   </style>
 </head>
 
@@ -2680,7 +2691,6 @@
     <div class="nav-right">
       <ul class="nav-links" id="main-menu">
         <li><a href="#" onclick="showPage('main-site-content')" data-key="nav-home">Home</a></li>
-		<li><a href="#profile" onclick="showPage('profile-page')" data-key="nav-profile">Our profile</a></li>
 
         <li class="dropdown">
           <a class="dropdown-toggle" data-key="nav-about">About Us</a>
@@ -2730,11 +2740,11 @@
 			<a href="#nahdi-page" onclick="showPage('nahdi-page')" data-key="nav-project-nahdi">Nahdi Project</a>
 			<a href="#petromin-page" onclick="showPage('petromin-page')" data-key="nav-project-petromin">Petromin Project</a>
 			<a href="#nissan-page" onclick="showPage('nissan-page')" data-key="nav-project-nissan">Nissan Project</a>
+			<a href="#almarai-page" onclick="showPage('almarai-page')" data-key="nav-project-almarai">Almarai
+              Project</a>
             <a href="#acino-page" onclick="showPage('acino-page')" data-key="nav-project-acino">Acino Project</a>
             <a href="#event-page" onclick="showPage('booths-page')" data-key="nav-project-booth">Event Booth</a>
             <a href="#zamil-page" onclick="showPage('zamil-page')" data-key="nav-project-zamil">Zamil HVAC Project</a>
-            <a href="#almarai-page" onclick="showPage('almarai-page')" data-key="nav-project-almarai">Almarai
-              Project</a>
             <a href="#flag-page" onclick="showPage('flag-page')" data-key="nav-project-flag">Flag Project</a>
           </div>
         </li>
@@ -2777,7 +2787,7 @@
     <!-- ABOUT -->
     <section class="about-section" id="about">
       <div class="container">
-		<div class="product-card">
+	  <div class="product-card">
 				  <img src="static/assets/aramco-image.jpg" alt="aramco">
 				</div>
 				
@@ -2802,9 +2812,6 @@
         </ul>
       </div>
     </section>
-
-		
-
 
     <!-- SERVICES -->
     <section class="services" id="services">
@@ -2872,12 +2879,11 @@
         </div>
         <div class="deliverable-card" onclick="showPage('production-page')">
           <div class="icon"><img src="static/assets/production-image.jpg" alt="production" class="emoji-img"></div>
-          <h3 data-key="service-12-title"> Productions </h3>
-          <p data-key="service-12-desc">JAZAACO Productions | Integrated Advertising & Branding Solutions.</p>
+          <h3 data-key="service-12-title"> Production </h3>
+          <p data-key="service-12-desc">JAZAACO Production | Integrated Advertising & Branding Solutions.</p>
         </div>
       </div>
     </section>
-	
 	
 	<!-- PARTNERS -->
     <section class="partners-section" id="partners">
@@ -2991,7 +2997,6 @@
             <div class="loop-slide"><img src="static/assets/client6-image.jpg" alt="Client Logo"></div>
             <div class="loop-slide"><img src="static/assets/client7-image.jpg" alt="Client Logo"></div>
             <div class="loop-slide"><img src="static/assets/client8-image.jpg" alt="Client Logo"></div>
-			<div class="loop-slide"><img src="static/assets/aramco-image.jpg" alt="Client Logo"></div>
             <div class="loop-slide"><img src="static/assets/client-image.jpg" alt="Client Logo"></div>
             <div class="loop-slide"><img src="static/assets/client1-image.jpg" alt="Client Logo"></div>
             <div class="loop-slide"><img src="static/assets/client3-image.jpg" alt="Client Logo"></div>
@@ -3000,7 +3005,6 @@
             <div class="loop-slide"><img src="static/assets/client6-image.jpg" alt="Client Logo"></div>
             <div class="loop-slide"><img src="static/assets/client7-image.jpg" alt="Client Logo"></div>
             <div class="loop-slide"><img src="static/assets/client8-image.jpg" alt="Client Logo"></div>
-			<div class="loop-slide"><img src="static/assets/aramco-image.jpg" alt="Client Logo"></div>
           </div>
         </div>
       </div>
@@ -3062,7 +3066,7 @@
           <div class="executive-card">
             <img src="static/assets/member7-image.jpg" alt="abdullah">
             <h3>Abdullah Al-Zaidi</h3>
-            <span data-key="team-IT-position">IT System Specialist</span>
+            <span data-key="team-IT-position">IT and Sales Engineer</span>
           </div>
           <div class="executive-card">
             <img src="static/assets/member8-image.jpg" alt="Syed Omair">
@@ -3092,7 +3096,7 @@
           <div class="executive-card">
             <img src="static/assets/member13-image.jpg" alt="ahlam">
             <h3>Adham Mansour</h3>
-            <span data-key="team-technical-position">Technincal Manager</span>
+            <span data-key="team-technical-position">Technical Manager</span>
           </div>
           <div class="executive-card">
             <img src="static/assets/member14-image.jpg" alt="ahlam">
@@ -3114,7 +3118,6 @@
             <h3>Mesfin Tefera</h3>
             <span data-key="team-salesex-position">Sales Executive</span>
           </div>
-		  
         </div>
       </div>
     </section>
@@ -4005,32 +4008,24 @@
       </div>
     </div>
   </div>
-  
-  <!--pdf-->
+
+<!--pdf-->
     <div id="profile-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
       <div class="jobs-container">
         <h1 data-key="profile-heading">OUR PROFILE</h1>
-        <div style="display: flex; gap: 16px;">
-          <iframe
-            src="https://drive.google.com/file/d/1rGCLehrJqdAqvrBgnRqm4LTpxH0ZRpm0/preview"
-            width="50%"
-            height="800px"
-            style="border: none; border-radius: 8px;"
-            allow="autoplay">
-          </iframe>
-          <iframe
-            src="https://drive.google.com/file/d/1qFs0XDfNsdnNOgzoRRW1r9z92dSzP-SL/preview"
-            width="50%"
-            height="800px"
-            style="border: none; border-radius: 8px;"
-            allow="autoplay">
-          </iframe>
-        </div>
+        <iframe
+        src="https://drive.google.com/file/d/1rGCLehrJqdAqvrBgnRqm4LTpxH0ZRpm0/preview"
+        width="100%"
+        height="800px"
+        style="border: none; border-radius: 8px;"
+        allow="autoplay">
+      </iframe>
       </div>
     </div>
   </div>
+
 
   <!-- PROJECTS PAGES -->
   
@@ -4046,13 +4041,6 @@
           <div class="swiper-slide" role="group" aria-label="2/4">
             <img src="static/assets/nahdi2-image.jpg" alt="nahdi">
           </div>
-		  <div class="swiper-slide swiper-slide-active" role="group" aria-label="1/4">
-            <img src="static/assets/nahdi3-image.jpg" alt="nahdi">
-          </div>
-          <div class="swiper-slide" role="group" aria-label="2/4">
-            <img src="static/assets/nahdi4-image.jpg" alt="nahdi">
-          </div>
-        </div>
         </div>
         <!-- Navigation arrows -->
         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
@@ -4071,7 +4059,6 @@
           <p><strong data-key="status-label">Status:</strong> <span data-key="completed">Completed</span></p>
           <p><strong data-key="scope-label">Scope:</strong> <span data-key="nahdi-s">Restored and renovated complete
               pharmacy.</span></p>
-			  <p><strong data-key="scope-label">Scope:</strong> <span data-key="nahdi-s">condenser coil replacement work</span></p>	  
         </div>
         <!-- Optional: You can add more sections like your manpower one had -->
         <!-- <h3>Key Highlights</h3>
@@ -4117,12 +4104,12 @@
       </div>
       <!-- Project Information (adapted from your provided HTML) -->
       <div class="project-info">
-        <h1><b>Petromin Pump</b></h1>
-        <p>Complete Construciton of Petrol pump and car services stations.</p>
+        <h1><b data-key="nahdih">Petromin Pump</b></h1>
+        <p data-key="nahdip">Complete Construciton of Petrol pump and car services stations.</p>
         <div class="project-meta">
-          <p><strong data-key="client-label">Client:</strong> <span>Petromin</span></p>
-          <p><strong data-key="status-label">Status:</strong> <span>Completed</span></p>
-          <p><strong data-key="scope-label">Scope:</strong> <span>Complete Construction of petrolpump in Madina.</span></p>
+          <p><strong data-key="client-label">Client:</strong> <span data-key="nahdi-c">Petromin</span></p>
+          <p><strong data-key="status-label">Status:</strong> <span data-key="completed">Completed</span></p>
+          <p><strong data-key="scope-label">Scope:</strong> <span data-key="nahdi-s">Complete Construction of petrolpump.</span></p>
         </div>
         <!-- Optional: You can add more sections like your manpower one had -->
         <!-- <h3>Key Highlights</h3>
@@ -4135,7 +4122,7 @@
     </div>
   </div>
   
-    <div id="nissan-page" class="page-content"> <!-- keep your id -->
+  <div id="nissan-page" class="page-content"> <!-- keep your id -->
     <div class="tech-detail-container"> <!-- ← use this class everywhere -->
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
       <!-- Swiper Image Slider (exactly like the example you shared) -->
@@ -4513,12 +4500,9 @@
   </div>
 </div>
 
-
 <!-- Chat Toggle Button -->
 <button id="jz-chat-btn" title="Chat with Jazaaco Assistant" aria-label="Open chat assistant">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-  </svg>
+  <img src="static/assets/chat-avatar.jpg" alt="Chat" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
   <div class="jz-notif" id="jz-notif"></div>
 </button>
  
@@ -4554,6 +4538,7 @@
  
   <div class="jz-powered">Powered by <a href="https://www.anthropic.com" target="_blank">Claude AI</a></div>
 </div>
+
 
 </body>
   <script>
@@ -5300,7 +5285,8 @@
         // ... Add ALL other Arabic translations
       }
     };
-
+	
+	
     // ══════════════════════════════════════════════════════════════
     // LANGUAGE HANDLING
     // ══════════════════════════════════════════════════════════════
@@ -5643,10 +5629,8 @@ window.addEventListener('scroll', () => {
           if (btn) { btn.textContent = origText; btn.disabled = false; }
         });
     }
-
-
-
-/* ── CHATBOT ── */
+	
+	/* ── CHATBOT ── */
 (function () {
     // === UPDATE THESE TWO LINES ===
     var API_KEY      = ''; // ← Put your NEW Anthropic API key here
@@ -5845,8 +5829,5 @@ window.addEventListener('scroll', () => {
     }, 4000);
 
 })();
-<<<<<<< HEAD
+
   </script>
-=======
-  </script>
->>>>>>> 5bbb16a9a4b6bdddea1b5b4d37bf789ed1e2cb12
