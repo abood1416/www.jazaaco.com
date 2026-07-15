@@ -2692,12 +2692,14 @@
       <ul class="nav-links" id="main-menu">
         <li><a href="#" onclick="showPage('main-site-content')" data-key="nav-home">Home</a></li>
 
-        <li class="dropdown">
+         <li class="dropdown">
           <a class="dropdown-toggle" data-key="nav-about">About Us</a>
           <div class="dropdown-menu">
             <a href="#about" onclick="showPage('main-site-content')" data-key="nav-about">About Us</a>
             <a href="#team" onclick="showPage('main-site-content')" data-key="nav-team">Team</a>
             <a href="#careers" onclick="showPage('careers-page')" data-key="nav-careers">Careers</a>
+			<a href="#profile" onclick="showPage('profile-page')" data-key="nav-profile">Our Profile</a>
+			<a href="#certificates" onclick="showPage('certificates-page')" data-key="nav-certificates">Certificates</a>
           </div>
         </li>
 
@@ -3026,6 +3028,11 @@
             <img src="static/assets/member-image.jpg" alt="Mohammed J.K">
             <h3>Mohammed J.K</h3>
             <span data-key="team-board-position">Board Member</span>
+          </div>
+			<div class="executive-card">
+            <img src="static/assets/member13-image.jpg" alt="ahlam">
+            <h3>Dr. Arshi Malik</h3>
+            <span data-key="team-general-position">General Manager</span>
           </div>
           <div class="executive-card">
             <img src="static/assets/member2-image.jpg" alt="Jalaluddin">
@@ -4026,7 +4033,39 @@
     </div>
   </div>
 
+<!--pdf-->
+    <div id="profile-page" class="page-content">
+    <div class="tech-detail-container">
+      <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
+      <div class="jobs-container">
+        <h1 data-key="profile-heading">OUR PROFILE</h1>
+        <iframe
+        src="https://drive.google.com/file/d/1rGCLehrJqdAqvrBgnRqm4LTpxH0ZRpm0/preview"
+        width="100%"
+        height="800px"
+        style="border: none; border-radius: 8px;"
+        allow="autoplay">
+      </iframe>
+      </div>
+    </div>
+  </div>
 
+<!--certificates-->
+    <div id="certificates-page" class="page-content">
+    <div class="tech-detail-container">
+      <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
+      <div class="jobs-container">
+        <h1 data-key="certificates-heading">CERTIFICATES</h1>
+      <img src="static/assets/iso-image.jpg" alt="Industrial supply"
+        style="width: 100%; max-width: 800px; height: auto; display: block; margin: 20px auto; border-radius: 8px;">
+      <img src="static/assets/iso1-image.jpg" alt="Industrial supply"
+        style="width: 100%; max-width: 800px; height: auto; display: block; margin: 20px auto; border-radius: 8px;">
+      <img src="static/assets/iso3-image.jpg" alt="Industrial supply"
+        style="width: 100%; max-width: 800px; height: auto; display: block; margin: 20px auto; border-radius: 8px;">
+      </div>
+    </div>
+  </div>
+	
   <!-- PROJECTS PAGES -->
   
   <div id="nahdi-page" class="page-content"> <!-- keep your id -->
@@ -4655,6 +4694,7 @@
         'team-operations-title': 'Operations & Sales',
         'team-position-ceo': 'Chief Executive Officer',
         'team-board-position': 'Board Member',
+		  'team-general-position': 'General Manager',
         'team-purchase-position': 'Head of Purchase',
         'team-sales-position': 'National Sales Manager',
         'team-customer-position': 'Customer Relation Manager',
@@ -5028,6 +5068,7 @@
         'team-position-ceo': 'الرئيس التنفيذي',
         'team-sales-position': 'مدير المبيعات',
         'team-board-position': 'عضو مجلس الإدارة',
+		  'team-general-position' : 'المدير العام',
         'team-purchase-position': 'رئيس قسم المشتريات',
         'team-sales-position': 'مدير المبيعات الوطني',
         'team-customer-position': 'مدير علاقات العملاء',
