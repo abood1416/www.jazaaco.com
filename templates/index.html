@@ -53,9 +53,6 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <style>
-    /* ══════════════════════════════════════════════════════════════
-   CSS VARIABLES
-   ══════════════════════════════════════════════════════════════ */
     :root {
       --primary: #004a99;
       --secondary: #333;
@@ -72,9 +69,6 @@
       --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   SMOOTH SCROLLING & BASE STYLES
-   ══════════════════════════════════════════════════════════════ */
     html {
       scroll-behavior: smooth;
       scroll-padding-top: calc(var(--nav-height) + var(--topbar-height) + 20px);
@@ -105,9 +99,6 @@
       margin: 20px 0;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   ENHANCED PAGE TRANSITIONS
-   ══════════════════════════════════════════════════════════════ */
     .page-content {
       display: none;
       opacity: 0;
@@ -190,9 +181,6 @@
       }
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   LOADING OVERLAY
-   ══════════════════════════════════════════════════════════════ */
     .loading-overlay {
       position: fixed;
       top: 0;
@@ -233,9 +221,6 @@
       }
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   TOP BAR & NAVIGATION
-   ══════════════════════════════════════════════════════════════ */
     .top-social-bar {
       background: #f8f9fa;
       border-bottom: 1px solid #e0e0e0;
@@ -297,7 +282,6 @@
       text-decoration: underline;
     }
 
-    /* Main Navigation */
     nav {
       background: white;
       padding: 0 5%;
@@ -385,9 +369,6 @@
       color: var(--primary);
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   ENHANCED DROPDOWNS
-   ══════════════════════════════════════════════════════════════ */
     .dropdown {
       position: relative;
     }
@@ -551,7 +532,6 @@
       background: rgba(0, 74, 153, 0.05);
     }
 
-    /* Language Switch */
     .lang-switch {
       border-left: 1px solid #ddd;
       padding-left: 15px;
@@ -571,7 +551,6 @@
       padding-right: 15px;
     }
 
-    /* Mobile Menu */
     .mobile-menu-toggle {
       display: none;
       font-size: 28px;
@@ -587,9 +566,6 @@
       transform: scale(0.95);
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   BUTTONS & INTERACTIVE ELEMENTS
-   ══════════════════════════════════════════════════════════════ */
     .back-btn {
       background: var(--primary);
       color: #fff;
@@ -662,9 +638,6 @@
       transform: translateY(-2px);
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   HERO SECTION
-   ══════════════════════════════════════════════════════════════ */
     .hero {
       position: relative;
       height: 80vh;
@@ -727,9 +700,6 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   CARD COMPONENTS WITH SMOOTH HOVER
-   ══════════════════════════════════════════════════════════════ */
     .deliverable-card {
       background: var(--white);
       padding: 30px;
@@ -796,9 +766,6 @@
       line-height: 1.5;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   PROJECT CARDS
-   ══════════════════════════════════════════════════════════════ */
     .project-card {
       background: #fff;
       border-radius: 12px;
@@ -857,9 +824,6 @@
       color: #666;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   EXECUTIVE CARDS
-   ══════════════════════════════════════════════════════════════ */
     .executive-card {
       background: var(--white);
       border-radius: 16px;
@@ -929,9 +893,6 @@
       z-index: 1;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   SECTIONS
-   ══════════════════════════════════════════════════════════════ */
     .services {
       padding: 50px 5%;
       text-align: center;
@@ -1006,9 +967,6 @@
       text-align: right;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   LISTS & BULLETS
-   ══════════════════════════════════════════════════════════════ */
     .about-section ul,
     .supply-section ul,
     .mep-section ul,
@@ -1075,9 +1033,6 @@
       right: 4px;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   IMAGES & MEDIA
-   ══════════════════════════════════════════════════════════════ */
     .image-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -1122,9 +1077,6 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   PRODUCT GRID
-   ══════════════════════════════════════════════════════════════ */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1187,9 +1139,6 @@
       z-index: 1;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   MARQUEE ANIMATIONS
-   ══════════════════════════════════════════════════════════════ */
     .clients-marquee-wrapper,
     .loop-slider-wrapper {
       overflow: hidden;
@@ -1263,9 +1212,6 @@
       }
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   EXECUTIVE MANAGEMENT
-   ══════════════════════════════════════════════════════════════ */
     .executive-management {
       padding: 90px 5%;
       background: linear-gradient(135deg, #f7f9fc, #eef2f7);
@@ -1295,9 +1241,6 @@
       max-width: 1250px;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   PROJECTS SECTION
-   ══════════════════════════════════════════════════════════════ */
     .projects-section {
       padding: 80px 5%;
       background: #fafafa;
@@ -1309,9 +1252,6 @@
       margin: 0 auto;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   PROJECT SWIPER & INFO
-   ══════════════════════════════════════════════════════════════ */
     .project-detail-container {
       max-width: 1200px;
       margin: 2rem auto;
@@ -1369,9 +1309,6 @@
       color: var(--primary);
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   CONTACT SECTION
-   ══════════════════════════════════════════════════════════════ */
     .contact-section {
       padding: 60px 20px;
       background-color: #f9f9f9;
@@ -1520,9 +1457,6 @@
       box-shadow: 0 4px 12px rgba(0, 74, 153, 0.3);
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   CAREERS / JOBS FORM
-   ══════════════════════════════════════════════════════════════ */
     .jobs-container {
       max-width: 700px;
       margin: 50px auto;
@@ -1654,7 +1588,6 @@
       box-sizing: border-box;
     }
 
-    /* Custom File Upload */
     .custom-file-upload {
       position: relative;
       display: flex;
@@ -1700,9 +1633,6 @@
       flex: 1;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   BACK TO TOP BUTTON
-   ══════════════════════════════════════════════════════════════ */
 	#backToTop {
 	  position: fixed;
 	  bottom: 30px;
@@ -1736,9 +1666,6 @@
 		right: 30px;
 	}
 
-    /* ══════════════════════════════════════════════════════════════
-   FOOTER
-   ══════════════════════════════════════════════════════════════ */
     footer {
       background: #222;
       color: white;
@@ -1810,9 +1737,6 @@
       opacity: 0.7;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   ACCESSIBILITY
-   ══════════════════════════════════════════════════════════════ */
     *:focus-visible {
       outline: 2px solid var(--primary);
       outline-offset: 2px;
@@ -1824,9 +1748,6 @@
       outline-offset: 3px;
     }
 
-    /* ══════════════════════════════════════════════════════════════
-   PRINT STYLES
-   ══════════════════════════════════════════════════════════════ */
     @media print {
 
       nav,
@@ -1847,9 +1768,6 @@
       }
     }
 
- /* ══════════════════════════════════════════════════════════════
-   RESPONSIVE DESIGN
-   ══════════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .deliverables-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1871,7 +1789,6 @@
 }
 
 @media (max-width: 768px) {
-  /* KEEP THE TOP BAR VISIBLE */
   .top-social-bar {
     display: flex;
     padding: 6px 5%;
@@ -1884,29 +1801,24 @@
     gap: 8px;
   }
 
-  /* Adjust body padding to account for both bars */
   body {
     padding-top: calc(var(--nav-height) + var(--topbar-height));
   }
 
-  /* Navigation stays below top bar */
   nav {
     top: var(--topbar-height);
     padding: 0 3%;
   }
 
-  /* Show mobile menu toggle */
   .mobile-menu-toggle {
     display: block;
     z-index: 1002;
   }
 
-  /* Logo smaller on mobile */
   .logo img {
     height: 70px;
   }
 
-  /* Mobile menu styling */
   .nav-links {
     display: none;
     position: fixed;
@@ -1927,7 +1839,6 @@
     animation: slideDown 0.3s ease-out;
   }
 
-  /* Mobile dropdown styling */
   .dropdown-menu {
     position: static;
     box-shadow: none;
@@ -2003,7 +1914,6 @@
     font-size: 1.9rem;
   }
 
-  /* Make social icons slightly smaller on mobile */
   .social-part {
     gap: 10px;
   }
@@ -2012,7 +1922,6 @@
     font-size: 1.1rem;
   }
 
-  /* Hide language switch on very small screens to save space */
   .lang-part {
     font-size: 0.75rem;
   }
@@ -2041,7 +1950,6 @@
     height: 300px;
   }
 
-  /* Even more compact on smaller screens */
   nav {
     padding: 0 2%;
     height: 70px;
@@ -2073,7 +1981,6 @@
     height: 250px;
   }
 
-  /* Super compact mode */
   .logo img {
     height: 50px;
   }
@@ -2098,9 +2005,6 @@
   }
 }
 	
-	 /* ══════════════════════════════════════════════════════════════
-   SUCCESS POPUP MODALS
-   ══════════════════════════════════════════════════════════════ */
     .success-overlay {
       position: fixed;
       inset: 0;
@@ -2148,7 +2052,6 @@
       justify-content: center;
     }
 
-    /* ── Contact popup: blue theme ── */
     #contactSuccessPopup .success-icon-ring {
       background: rgba(0, 74, 153, 0.08);
       border: 3px solid var(--primary);
@@ -2186,7 +2089,6 @@
       background: linear-gradient(135deg, #003d7a, var(--primary));
     }
 
-    /* ── Careers popup: orange theme ── */
     #careersSuccessPopup .success-icon-ring {
       background: rgba(255, 87, 34, 0.08);
       border: 3px solid var(--orange);
@@ -2224,7 +2126,6 @@
       background: linear-gradient(135deg, #e64a19, var(--orange));
     }
 
-    /* ── Shared styles ── */
     @keyframes drawCheck { to { stroke-dashoffset: 0; } }
 
     .success-modal h2 {
@@ -2287,9 +2188,6 @@
       40%            { transform: scale(1.4); opacity: 1; }
     }
 
-	/* ══════════════════════════════════════════════════════════════
-   YOUTUBE VIDEO STYLING
-   ══════════════════════════════════════════════════════════════ */
 .hero-video,
 .video-section iframe {
   position: absolute;
@@ -2302,7 +2200,7 @@
   transform: translate(-50%, -50%);
   z-index: -1;
   object-fit: cover;
-  pointer-events: none; /* Prevent interaction */
+  pointer-events: none;
 }
 
 .video-section iframe {
@@ -2323,7 +2221,6 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 	
-/* ── Chat Toggle Button ── */
 #jz-chat-btn {
   position: fixed;
   bottom: 28px;
@@ -2373,8 +2270,6 @@
   50%      { transform: scale(1.25); }
 }	
 	
-	
-	/* ── Chat Window ── */
 #jz-chat-window {
   position: fixed;
   bottom: 98px;
@@ -2422,7 +2317,6 @@
   }
 }
  
-/* ── Header ── */
 .jz-header {
   background: var(--primary);
   padding: 14px 16px;
@@ -2479,7 +2373,6 @@
 }
 .jz-close-btn:hover { color: #fff; background: rgba(255,255,255,0.12); }
  
-/* ── Messages ── */
 .jz-messages {
   flex: 1;
   overflow-y: auto;
@@ -2541,7 +2434,6 @@
 }
 [dir="rtl"] .jz-msg.jz-user .jz-bubble { border-bottom-right-radius: 14px; border-bottom-left-radius: 4px; }
  
-/* ── Typing indicator ── */
 .jz-typing-dots {
   display: flex;
   gap: 4px;
@@ -2561,7 +2453,6 @@
   40%          { transform: scale(1);    opacity: 1; }
 }
  
-/* ── Quick reply chips ── */
 .jz-chips {
   display: flex;
   flex-wrap: wrap;
@@ -2586,7 +2477,6 @@
   transform: translateY(-1px);
 }
  
-/* ── Input row ── */
 .jz-input-row {
   display: flex;
   gap: 8px;
@@ -2653,12 +2543,10 @@
 </head>
 
 <body>
-  <!-- Loading Overlay -->
   <div class="loading-overlay" id="loadingOverlay">
     <div class="loading-spinner"></div>
   </div>
 
-  <!-- Top Bar with Language + All Social Icons -->
   <div class="top-social-bar">
     <div class="container-top">
       <div class="lang-part">
@@ -2682,7 +2570,6 @@
     </div>
   </div>
 
-  <!-- Clean Main Navigation -->
   <nav id="main-nav">
     <a href="#" class="logo" onclick="showPage('main-site-content')">
       <img src="static/assets/jazaaco-ventures-logo.png" alt="Jazaaco Ventures Logo" width="220" height="115">
@@ -2757,15 +2644,11 @@
     </div>
   </nav>
 
-  <!-- BACK TO TOP -->
   <button id="backToTop" onclick="scrollToTop()">↑</button>
 
-  <!-- MAIN CONTENT -->
   <div id="main-site-content" class="page-content">
-  <!-- HERO -->
   <header class="hero" style="position: relative; height: 600px; overflow: hidden;">
 
-    <!-- Video Background -->
     <iframe class="hero-video"
       src="https://www.youtube.com/embed/w29t61k_BOk?autoplay=1&mute=1&loop=1&playlist=w29t61k_BOk&controls=0&showinfo=0&modestbranding=1"
       frameborder="0"
@@ -2774,10 +2657,8 @@
       style="position: absolute; top: 50%; left: 50%; width: 177.77%; height: 100%; transform: translate(-50%, -50%); z-index: -1; pointer-events: none;">
     </iframe>
 
-    <!-- Optional overlay to darken video -->
     <div class="hero-overlay" style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); z-index:1;"></div>
 
-    <!-- Hero Content on top -->
     <div class="hero-content" style="position: relative; z-index: 2; text-align: center; padding-top: 60px; color: white;">
       <h1 data-key="hero-title">Industrial Excellence in Kingdom of Saudi Arabia</h1>
       <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px;" data-key="hero-subtitle">
@@ -2786,7 +2667,6 @@
     </div>
     </header>
 
-    <!-- ABOUT -->
     <section class="about-section" id="about">
       <div class="container">
 	  <div class="product-card">
@@ -2815,7 +2695,6 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="services" id="services">
       <h2 class="section-title" data-key="services-title">Our Core Deliverables</h2>
       <p class="center-text" data-key="services-select-prompt"><strong>Select a service to view full
@@ -2887,7 +2766,6 @@
       </div>
     </section>
 	
-	<!-- PARTNERS -->
     <section class="partners-section" id="partners">
       <div class="container">
         <h2 class="section-title" data-key="partners-title">Our Partners</h2>
@@ -2902,7 +2780,6 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section class="projects-section" id="projects">
       <div class="container">
         <h2 class="section-title" data-key="projects-title">Our Projects</h2>
@@ -2981,9 +2858,6 @@
       </div>
     </section>
 
-    
-
-    <!-- CLIENTS -->
     <section class="client-section" id="clients">
       <div class="container">
         <h2 class="section-title" data-key="clients-title">Our Clients</h2>
@@ -3012,7 +2886,6 @@
       </div>
     </section>
 
-    <!-- TEAM SECTION -->
     <section class="executive-management" id="team">
       <div class="container">
         <h2 class="section-title" data-key="team-title">Our Executive Leadership</h2>
@@ -3134,7 +3007,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="contact-section">
       <div class="container">
         <p class="pre-title" data-key="contact-pretitle">Let's Talk</p>
@@ -3171,79 +3043,6 @@
     </section>
   </div>
 
-  <!-- DETAIL PAGES - Due to length limitations, I'll include representative examples -->
-  <!-- You would include all your detail pages here (industrial-page, hvac-page, cooling-page, etc.) -->
-  <!-- For brevity, I'll show just the careers page as an example -->
-
-  <!-- Careers PAGE -->
-  <!-- <div id="careers-page" class="page-content">
-    <div class="tech-detail-container">
-      <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
-      <div class="jobs-container">
-        <h1 data-key="career-heading">Join Our Team</h1>
-        <p data-key="career-introtext">We are looking for passionate and ambitious talents who want to work with a team
-          of experts and professionals.</p>
-        <form id="jobForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName" data-key="label_first_name">First Name *</label>
-              <input type="text" id="firstName" name="first_name" placeholder="Enter your first name" required
-                data-key="input_first_name">
-            </div>
-            <div class="form-group">
-              <label for="lastName" data-key="label_last_name">Last Name *</label>
-              <input type="text" id="lastName" name="last_name" placeholder="Enter your last name" required
-                data-key="input_last_name">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phone" data-key="label_phone">Contact Number *</label>
-              <input type="tel" id="phone" name="contact_number" placeholder="Enter your phone number" required
-                data-key="input_phone">
-            </div>
-            <div class="form-group">
-              <label for="email" data-key="label_email">Email *</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required
-                data-key="input_email">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="location" data-key="label_location">Location *</label>
-            <select id="location" name="location" required>
-              <option value="" data-key="option_select_location">Select Your Location</option>
-              <option value="Riyadh" data-key="option_riyadh">Riyadh</option>
-              <option value="Jeddah">Jeddah</option>
-              <option value="Mecca" selected data-key="option_mecca">Mecca</option>
-              <option value="Dammam">Dammam</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="prevJob" data-key="label_prev_job">Previous / Current Job</label>
-            <textarea id="prevJob" name="previous_job" rows="4"
-              placeholder="Brief description of your current or most recent job..."
-              data-key="textarea_prev_job"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="cvUpload" data-key="label_cv">Upload CV (PDF only, max 5MB)</label>
-            <div class="custom-file-upload">
-              <input type="file" id="cvUpload" name="cv_file" accept=".pdf" data-key="input_cv">
-              <label for="cvUpload" class="file-btn">
-                <i class="fas fa-upload"></i> Choose CV File
-              </label>
-              <span id="file-name" class="file-name-display">No file chosen</span>
-            </div>
-          </div>
-          <button type="submit" data-key="button_submit">Submit Application</button>
-        </form>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- NOTE: All other detail pages (industrial, HVAC, cooling, sustainability, etc.) should be included here -->
-  <!-- DETAIL PAGES -->
-  <!-- INDUSTRIAL PAGE -->
   <div id="industrial-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3279,7 +3078,6 @@
         style="width: 100%; max-width: 800px; height: auto; display: block; margin: 20px auto; border-radius: 8px;">
     </div>
   </div>
-  <!-- HVAC PAGE -->
   <div id="hvac-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3354,7 +3152,6 @@
         refrigerant charging, and detailed performance reports to ensure system longevity.</p>
     </div>
   </div>
-  <!-- COOLING PAGE -->
   <div id="cooling-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3425,7 +3222,6 @@
       </ul>
     </div>
   </div>
-  <!-- SUSTAINABILITY PAGE -->
   <div id="sustainability-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3477,7 +3273,6 @@
         all energy efficiency projects.</p>
     </div>
   </div>
-  <!-- INTERNAL ARCHITECTURE PAGE -->
   <div id="internal-architecture-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3528,7 +3323,6 @@
         finishing, and timely delivery with strict quality control at every stage.</p>
     </div>
   </div>
-  <!-- TELECOM PAGE -->
   <div id="telecom-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3585,7 +3379,6 @@
         installations.</p>
     </div>
   </div>
-  <!-- MANPOWER PAGE -->
   <div id="manpower-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3608,10 +3401,8 @@
             <img src="static/assets/manpower4-image.jpg" alt="manpower">
           </div>
         </div>
-        <!-- Navigation arrows -->
         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
         <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
-        <!-- Pagination bullets -->
         <div
           class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
         </div>
@@ -3644,7 +3435,6 @@
         supervised to maintain the highest standards of safety and productivity.</p>
     </div>
   </div>
-  <!-- RENTALS PAGE -->
   <div id="rentals-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3724,7 +3514,6 @@
         emergency breakdown services to minimize downtime.</p>
     </div>
   </div>
-  <!-- CONSTRUCTION PAGE -->
   <div id="construction-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3770,7 +3559,6 @@
         documentation and provide warranty support for completed works.</p>
     </div>
   </div>
-  <!-- FABRICATION PAGE -->
   <div id="fabrication-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3832,7 +3620,6 @@
         and provide as-built drawings for all delivered components.</p>
     </div>
   </div>
-  <!-- FIRE SAFETY PAGE -->
   <div id="fire-safety-serv-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3851,7 +3638,6 @@
           applications and electrical rooms.</li>
       </ul>
 
-      <!-- IMAGE GRID -->
       <div class="product-grid">
         <div class="product-card">
           <img src="static/assets/fire1-image.jpg" alt="Sprinkler Systems">
@@ -3891,8 +3677,6 @@
         services with detailed documentation and certification.</p>
     </div>
   </div>
-
-  <!-- Productions PAGE -->
 
   <div id="production-page" class="page-content">
     <div class="tech-detail-container">
@@ -3947,7 +3731,6 @@
   </div>
 
 
-  <!-- Careers PAGE -->
   <div id="careers-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -3957,7 +3740,6 @@
           We are looking for passionate and ambitious talents who want to work with a team of experts and professionals.
         </p>
         <form id="jobForm" action="/send_cv" method="POST" enctype="multipart/form-data">
-          <!-- Row 1: First Name + Last Name -->
           <div class="form-row">
             <div class="form-group">
               <label for="firstName" data-key="label_first_name">First Name *</label>
@@ -3970,7 +3752,6 @@
                 data-key="input_last_name">
             </div>
           </div>
-          <!-- Row 2: Contact Number + Email -->
           <div class="form-row">
             <div class="form-group">
               <label for="phone" data-key="label_phone">Contact Number *</label>
@@ -3983,7 +3764,6 @@
                 data-key="input_email">
             </div>
           </div>
-          <!-- Location (full width) -->
           <div class="form-group">
             <label for="location" data-key="label_location">Location *</label>
             <select id="location" name="location" required>
@@ -3995,15 +3775,12 @@
               <option value="Other">Other</option>
             </select>
           </div>
-          <!-- Previous Job / Experience description -->
           <div class="form-group">
             <label for="prevJob" data-key="label_prev_job">Previous / Current Job</label>
             <textarea id="prevJob" name="previous_job" rows="4"
               placeholder="Brief description of your current or most recent job..."
               data-key="textarea_prev_job"></textarea>
           </div>
-          <!-- CV Upload -->
-          <!-- CV Upload - Styled like submit button -->
           <div class="form-group">
             <label for="cvUpload" data-key="label_cv">Upload CV (PDF only, max 5MB)</label>
             <div class="custom-file-upload">
@@ -4014,7 +3791,6 @@
               <span id="file-name" class="file-name-display">No file chosen</span>
             </div>
           </div>
-          <!-- Submit Button -->
           <button type="submit" data-key="button_submit">Submit Application</button>
         </form>
       </div>
@@ -4022,7 +3798,6 @@
   </div>
 
 
-<!--pdf-->
     <div id="profile-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -4039,7 +3814,6 @@
     </div>
   </div>
 
-<!--certificates-->
     <div id="certificates-page" class="page-content">
     <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
@@ -4055,12 +3829,9 @@
     </div>
   </div>
 	
-  <!-- PROJECTS PAGES -->
-  
-  <div id="nahdi-page" class="page-content"> <!-- keep your id -->
-    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+  <div id="nahdi-page" class="page-content">
+    <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
-      <!-- Swiper Image Slider (exactly like the example you shared) -->
       <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
         <div class="swiper-wrapper" id="marjan-swiper-wrapper">
           <div class="swiper-slide swiper-slide-active" role="group" aria-label="1/4">
@@ -4070,15 +3841,12 @@
             <img src="static/assets/nahdi2-image.jpg" alt="nahdi">
           </div>
         </div>
-        <!-- Navigation arrows -->
         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
         <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
-        <!-- Pagination bullets -->
         <div
           class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
         </div>
       </div>
-      <!-- Project Information (adapted from your provided HTML) -->
       <div class="project-info">
         <h1><b data-key="nahdih">Nahdi Pharmacy</b></h1>
         <p data-key="nahdip">Complete renovation of the pharmacy exterior.</p>
@@ -4088,21 +3856,13 @@
           <p><strong data-key="scope-label">Scope:</strong> <span data-key="nahdi-s">Restored and renovated complete
               pharmacy.</span></p>
         </div>
-        <!-- Optional: You can add more sections like your manpower one had -->
-        <!-- <h3>Key Highlights</h3>
-      <ul>
-        <li>Prefabricated modular buildings for rapid deployment</li>
-        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
-        <li>Site development including roads, parking & fencing</li>
-      </ul> -->
       </div>
     </div>
   </div>
   
-  <div id="petromin-page" class="page-content"> <!-- keep your id -->
-    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+  <div id="petromin-page" class="page-content">
+    <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
-      <!-- Swiper Image Slider (exactly like the example you shared) -->
       <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
         <div class="swiper-wrapper" id="marjan-swiper-wrapper">
           
@@ -4122,38 +3882,28 @@
             <img src="static/assets/petromin4-image.jpg" alt="petromin">
           </div>
         </div>
-        <!-- Navigation arrows -->
         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
         <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
-        <!-- Pagination bullets -->
         <div
           class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
         </div>
       </div>
-      <!-- Project Information (adapted from your provided HTML) -->
       <div class="project-info">
         <h1><b data-key="petrominh">Petromin Pump</b></h1>
-        <p data-key="petrominp">Complete Construciton of Petrol pump and car services stations.</p>
+        <p data-key="petrominp">Complete construction of the petrol pump and car service stations.</p>
         <div class="project-meta">
-          <p><strong data-key="client-label">Client:</strong> <span data-key="nahdi-c">Petromin</span></p>
-          <p><strong data-key="status-label">Status:</strong> <span data-key="completed">Completed</span></p>
-          <p><strong data-key="scope-label">Scope:</strong> <span data-key="nahdi-s">Complete Construction of petrolpump.</span></p>
+         <p><strong data-key="client-label">Client:</strong> <span data-key="petromin-c">Petromin</span></p>
+		<p><strong data-key="status-label">Status:</strong> <span data-key="completed">Completed</span></p>
+		<p><strong data-key="scope-label">Scope:</strong> <span data-key="petromin-s">Complete construction of the petrol pump and car service stations.</span></p>
+
         </div>
-        <!-- Optional: You can add more sections like your manpower one had -->
-        <!-- <h3>Key Highlights</h3>
-      <ul>
-        <li>Prefabricated modular buildings for rapid deployment</li>
-        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
-        <li>Site development including roads, parking & fencing</li>
-      </ul> -->
       </div>
     </div>
   </div>
   
-  <div id="nissan-page" class="page-content"> <!-- keep your id -->
-    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+  <div id="nissan-page" class="page-content">
+    <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
-      <!-- Swiper Image Slider (exactly like the example you shared) -->
       <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
         <div class="swiper-wrapper" id="marjan-swiper-wrapper">
           
@@ -4171,39 +3921,28 @@
           </div>
 		 
         </div>
-        <!-- Navigation arrows -->
         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
         <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
-        <!-- Pagination bullets -->
         <div
           class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
         </div>
       </div>
-      <!-- Project Information (adapted from your provided HTML) -->
       <div class="project-info">
         <h1><b>Nissan Showroom</b></h1>
-        <p>Renovation of Showroom.</p>
+        <p>Renovation of showroom.</p>
         <div class="project-meta">
           <p><strong data-key="client-label">Client:</strong> <span>Nissan</span></p>
           <p><strong data-key="status-label">Status:</strong> <span>Completed</span></p>
-          <p><strong data-key="scope-label">Scope:</strong> <span>Complete Renovation of Nissan Showroom in madina.</span></p>
+          <p><strong data-key="scope-label">Scope:</strong> <span>Complete renovation of the Nissan showroom in Madinah.</span></p>
         </div>
-        <!-- Optional: You can add more sections like your manpower one had -->
-        <!-- <h3>Key Highlights</h3>
-      <ul>
-        <li>Prefabricated modular buildings for rapid deployment</li>
-        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
-        <li>Site development including roads, parking & fencing</li>
-      </ul> -->
       </div>
     </div>
   </div>
   
-  <div id="almarai-page" class="page-content"> <!-- keep your id -->
-    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+  <div id="almarai-page" class="page-content">
+    <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
 
-      <!-- Swiper Image Slider (exactly like the example you shared) -->
       <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
         <div class="swiper-wrapper" id="marjan-swiper-wrapper">
 
@@ -4222,17 +3961,14 @@
 
         </div>
 
-        <!-- Navigation arrows -->
         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
         <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
 
-        <!-- Pagination bullets -->
         <div
           class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
         </div>
       </div>
 
-      <!-- Project Information (adapted from your provided HTML) -->
       <div class="project-info">
         <h1><b>Almarai Regional Office</b></h1>
         <p>Almarai regional office renovation</p>
@@ -4240,25 +3976,17 @@
         <div class="project-meta">
           <p><strong data-key="client-label">Client:</strong> Almarai</p>
           <p><strong data-key="status-label">Status:</strong> Completed</p>
-          <p><strong data-key="scope-label">Scope:</strong> Sucessfully renovated the reigonal of office of almarai.</p>
+          <p><strong data-key="scope-label">Scope:</strong> Successfully renovated the regional office of Almarai.</p>
         </div>
 
-        <!-- Optional: You can add more sections like your manpower one had -->
-        <!-- <h3>Key Highlights</h3>
-      <ul>
-        <li>Prefabricated modular buildings for rapid deployment</li>
-        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
-        <li>Site development including roads, parking & fencing</li>
-      </ul> -->
       </div>
 
     </div>
   </div>
 
-  <div id="acino-page" class="page-content"> <!-- keep your id -->
-    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+  <div id="acino-page" class="page-content">
+    <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
-      <!-- Swiper Image Slider (exactly like the example you shared) -->
       <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
         <div class="swiper-wrapper" id="marjan-swiper-wrapper">
           <div class="swiper-slide swiper-slide-active" role="group" aria-label="1/4">
@@ -4274,38 +4002,27 @@
             <img src="static/assets/acino4-image.jpg" alt="acino">
           </div>
         </div>
-        <!-- Navigation arrows -->
         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
         <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
-        <!-- Pagination bullets -->
         <div
           class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
         </div>
       </div>
-      <!-- Project Information (adapted from your provided HTML) -->
       <div class="project-info">
-        <h1><b>Acino Interior desgin and renovation</b></h1>
+        <h1><b>Acino Interior Design and Renovation</b></h1>
         <p>Designed and renovated the entire office</p>
         <div class="project-meta">
           <p><strong data-key="client-label">Client:</strong> Acino </p>
           <p><strong data-key="status-label">Status:</strong> Completed</p>
-          <p><strong data-key="scope-label">Scope:</strong> Complete renovation of the office with our interior designs
-            and prodction.</p>
+          <p><strong data-key="scope-label">Scope:</strong> Complete renovation of the office with our interior design
+            and production.</p>
         </div>
-        <!-- Optional: You can add more sections like your manpower one had -->
-        <!-- <h3>Key Highlights</h3>
-      <ul>
-        <li>Prefabricated modular buildings for rapid deployment</li>
-        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
-        <li>Site development including roads, parking & fencing</li>
-      </ul> -->
       </div>
     </div>
   </div>
-  <div id="booths-page" class="page-content"> <!-- keep your id -->
-    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+  <div id="booths-page" class="page-content">
+    <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
-      <!-- Swiper Image Slider (exactly like the example you shared) -->
       <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
         <div class="swiper-wrapper" id="marjan-swiper-wrapper">
           <div class="swiper-slide swiper-slide-active" role="group" aria-label="1/4">
@@ -4321,38 +4038,27 @@
             <img src="static/assets/booth3-image.jpg" alt="booth">
           </div>
         </div>
-        <!-- Navigation arrows -->
         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
         <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
-        <!-- Pagination bullets -->
         <div
           class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
         </div>
       </div>
-      <!-- Project Information (adapted from your provided HTML) -->
       <div class="project-info">
         <h1><b>Booths for Malls/Events</b></h1>
         <p>Constructed portable booths which are used in malls and events</p>
         <div class="project-meta">
           <p><strong data-key="client-label">Client:</strong> Malls and Event Organizers</p>
           <p><strong data-key="status-label">Status:</strong> Completed</p>
-          <p><strong data-key="scope-label">Scope:</strong> Delivered required booths and fitouts to the malls and event
+          <p><strong data-key="scope-label">Scope:</strong> Delivered the required booths and fit-outs to malls and event
             organizers.</p>
         </div>
-        <!-- Optional: You can add more sections like your manpower one had -->
-        <!-- <h3>Key Highlights</h3>
-      <ul>
-        <li>Prefabricated modular buildings for rapid deployment</li>
-        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
-        <li>Site development including roads, parking & fencing</li>
-      </ul> -->
       </div>
     </div>
   </div>
-  <div id="zamil-page" class="page-content"> <!-- keep your id -->
-    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+  <div id="zamil-page" class="page-content">
+    <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
-      <!-- Swiper Image Slider (exactly like the example you shared) -->
       <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
         <div class="swiper-wrapper" id="marjan-swiper-wrapper">
           <div class="swiper-slide swiper-slide-active" role="group" aria-label="1/4">
@@ -4368,41 +4074,30 @@
             <img src="static/assets/hvac7-image.jpg" alt="hvac">
           </div>
         </div>
-        <!-- Navigation arrows -->
         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
         <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
-        <!-- Pagination bullets -->
         <div
           class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
         </div>
       </div>
-      <!-- Project Information (adapted from your provided HTML) -->
       <div class="project-info">
         <h1><b>Zamil HVAC Project</b></h1>
-        <p>Installation and maintenance of hvac</p>
+        <p>Installation and maintenance of HVAC</p>
         <div class="project-meta">
           <p><strong data-key="client-label">Client:</strong> Zamil</p>
           <p><strong data-key="status-label">Status:</strong> Completed</p>
-          <p><strong data-key="scope-label">Scope:</strong>Installed the HVAC systems and maintened them as required by
+          <p><strong data-key="scope-label">Scope:</strong> Installed the HVAC systems and maintained them as required by the
             client.</p>
         </div>
-        <!-- Optional: You can add more sections like your manpower one had -->
-        <!-- <h3>Key Highlights</h3>
-      <ul>
-        <li>Prefabricated modular buildings for rapid deployment</li>
-        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
-        <li>Site development including roads, parking & fencing</li>
-      </ul> -->
       </div>
     </div>
   </div>
   
 
 
-  <div id="flag-page" class="page-content"> <!-- keep your id -->
-    <div class="tech-detail-container"> <!-- ← use this class everywhere -->
+  <div id="flag-page" class="page-content">
+    <div class="tech-detail-container">
       <button onclick="showPage('main-site-content')" class="back-btn" data-key="back-btn">← Back</button>
-      <!-- Swiper Image Slider (exactly like the example you shared) -->
       <div class="swiper swiper-initialized swiper-horizontal swiper-rtl swiper-backface-hidden project-swiper">
         <div class="swiper-wrapper" id="marjan-swiper-wrapper">
           <div class="swiper-slide swiper-slide-active" role="group" aria-label="1/4">
@@ -4418,36 +4113,24 @@
             <img src="static/assets/flag4-image.jpg" alt="flag">
           </div>
         </div>
-        <!-- Navigation arrows -->
         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
         <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
-        <!-- Pagination bullets -->
         <div
           class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
         </div>
       </div>
-      <!-- Project Information (adapted from your provided HTML) -->
       <div class="project-info">
         <h1><b data-key="flag">Flag Company</b></h1>
         <p data-key="flagp">Renovated the entire office with our interior productions.</p>
         <div class="project-meta">
           <p><strong data-key="client-label">Client:</strong> <span data-key="flag-c">Flag Company</span></p>
           <p><strong data-key="status-label">Status:</strong> <span data-key="completed">Completed</span></p>
-          <p><strong data-key="scope-label">Scope:</strong> <span data-key="flag-s">Complete Renovation of the
-              office.</span></p>
+          <p><strong data-key="scope-label">Scope:</strong> <span data-key="flag-s">Complete renovation of the office.</span></p>
         </div>
-        <!-- Optional: You can add more sections like your manpower one had -->
-        <!-- <h3>Key Highlights</h3>
-      <ul>
-        <li>Prefabricated modular buildings for rapid deployment</li>
-        <li>Complete utility infrastructure (water, sewage, fire protection)</li>
-        <li>Site development including roads, parking & fencing</li>
-      </ul> -->
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <div class="footer-section">
@@ -4528,13 +4211,11 @@
   </div>
 </div>
 
-<!-- Chat Toggle Button -->
 <button id="jz-chat-btn" title="Chat with Jazaaco Assistant" aria-label="Open chat assistant">
   <img src="static/assets/chat-avatar.jpg" alt="Chat" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
   <div class="jz-notif" id="jz-notif"></div>
 </button>
  
-<!-- Chat Window -->
 <div id="jz-chat-window" role="dialog" aria-label="Jazaaco AI Assistant">
  
   <div class="jz-header">
@@ -4570,9 +4251,6 @@
 
 </body>
   <script>
-    // ══════════════════════════════════════════════════════════════
-    // TRANSLATIONS OBJECT (Add ALL your translations here)
-    // ══════════════════════════════════════════════════════════════
     const translations = {
       en: {
         'nav-home': 'Home',
@@ -4649,8 +4327,8 @@
         'project-1-title': 'Almarai Project',
         'project-1-desc': 'Acheived the target, and client satisfaction.',
         'project-1-date': '2024–2025 ',
-        'client-lable': 'Client:',
-        'status-lable': 'Status:',
+        'client-label': 'Client:',
+        'status-label': 'Status:',
         'scope-label': 'Scope:',
         'completed-label': ' completed',
         'project-2-title': 'Acino Project',
@@ -4724,7 +4402,6 @@
         'career-heading': 'Join Our Team',
         'career-introtext': 'We are looking for passionate and ambitious talents who want to work with a team of experts and professionals.',
 		'profile-heading': 'OUR PROFILE',
-        // Industrial page
         'industrial-title': 'Technical Specifications: Industrial Supply',
         'industrial-intro': 'Our industrial supply division specializes in the procurement of high-pressure valves, heavy-duty gaskets, and specialized PPE for the Saudi oil and gas sector.',
         'industrial-cat-title': 'Core Product Categories',
@@ -4733,8 +4410,6 @@
         'industrial-cat-3': 'Fasteners & Hardware: Stainless steel bolts, nuts, washers, and anchors for marine and industrial environments.',
         'industrial-cat-4': 'Pumps & Valves: High-pressure hydraulic systems, gate valves, and control valves for petrochemical facilities.',
         'industrial-cat-5': 'Material Handling: Forklifts, pallet jacks, and lifting equipment with full maintenance support.',
-
-        // HVAC page
         'hvac-title': 'HVAC & MEP Technical Details',
         'hvac-video-title': 'Watch Our Cooling Solutions in Action',
         'hvac-video-unsupported': 'Your browser does not support the video tag.',
@@ -4756,9 +4431,6 @@
         'mep-img-3': 'Plumbing',
         'hvac-maintenance-title': 'Preventive Maintenance Programs',
         'hvac-maintenance-desc': 'Our maintenance packages include quarterly inspections, filter replacements, refrigerant charging, and detailed performance reports to ensure system longevity.',
-
-        // Cooling page
-
         'cooling-video-title': 'Watch Our Cooling Solutions in Action',
         'cooling-video-unsupported': 'Your browser does not support the video tag.',
         'cooling-title': 'Concrete Cooling Solutions',
@@ -4782,8 +4454,6 @@
         'cooling-app-2': 'Bridge deck cooling for Jeddah coastal infrastructure',
         'cooling-app-3': 'Mass concrete pours for industrial facilities and power plants',
         'cooling-app-4': 'Precast concrete production temperature control',
-
-        // Sustainability page
         'sustainability-title': 'Sustainability & Energy Efficiency',
         'sustainability-video-title': 'Watch Our Sustainability in Architecture',
         'sustainability-video-unsupported': 'Your browser does not support the video tag.',
@@ -4800,8 +4470,6 @@
         'sustainability-impact-4': 'Smart metering and energy management systems for continuous optimization',
         'sustainability-vision-title': 'Vision 2030 Alignment',
         'sustainability-vision-desc': 'Our sustainability initiatives support Saudi Arabia\'s commitment to renewable energy and carbon neutrality. We provide detailed carbon footprint assessments and ROI analysis for all energy efficiency projects.',
-
-        // Internal Architecture page
         'internal-arch-title': 'Technical Specifications: Internal Architecture',
         'internal-arch-intro': 'Our internal architecture solutions focus on intelligent space planning, high-quality finishes, and seamless integration of architectural and MEP systems.',
         'internal-arch-scope-title': 'Scope of Work',
@@ -4814,8 +4482,6 @@
         'internal-arch-design-desc': 'All designs comply with Saudi Building Codes, Civil Defense regulations, and international architectural standards, ensuring safety and durability.',
         'internal-arch-execution-title': 'Execution & Finishing',
         'internal-arch-execution-desc': 'Our skilled execution teams ensure precise installation, premium finishing, and timely delivery with strict quality control at every stage.',
-
-        // Telecom page
         'telecom-title': 'Telecommunications Infrastructure Solutions',
         'telecom-intro': 'Comprehensive telecommunications infrastructure services including fiber optic installation, network design, and ongoing maintenance for industrial and commercial facilities across Saudi Arabia.',
         'telecom-fiber-title': 'Fiber Optic Solutions',
@@ -4830,8 +4496,6 @@
         'telecom-network-4': 'Emergency Communications: Two-way radio systems and emergency notification infrastructure.',
         'telecom-support-title': 'Maintenance & Support',
         'telecom-support-desc': '24/7 technical support with rapid response teams for network troubleshooting, fiber repair, and system upgrades. We maintain comprehensive documentation and as-built drawings for all installations.',
-
-        // Manpower page
         'manpower-title': 'Professional Manpower Supply Services',
         'manpower-intro': 'Reliable supply of skilled and unskilled labor for industrial, construction, and maintenance projects.',
         'manpower-unskilled-title': 'Skilled And Unskilled Labor Services',
@@ -4850,7 +4514,6 @@
         'manpower-compliance-4': 'Documentation management including work permits and iqama processing',
         'manpower-management-title': 'Workforce Management',
         'manpower-management-desc': 'We provide complete workforce solutions including recruitment, onboarding, payroll management, and performance monitoring. Our team ensures all workers are properly equipped, trained, and supervised to maintain the highest standards of safety and productivity.',
-        // Rentals page
         'rentals-title': 'Equipment Rental Services',
         'rentals-intro': 'Comprehensive heavy machinery and specialized equipment rental solutions for construction, oil & gas, and industrial projects throughout Saudi Arabia.',
         'rentals-heavy-title': 'Heavy Machinery',
@@ -4866,7 +4529,6 @@
         'rentals-specialized-4': 'Compressors: Air compressors for pneumatic tools and sandblasting operations.',
         'rentals-terms-title': 'Rental Terms & Support',
         'rentals-terms-desc': 'Flexible rental periods from daily to long-term contracts. All equipment is regularly maintained and inspected for safety compliance. We provide on-site technical support, spare parts, and emergency breakdown services to minimize downtime.',
-        // Construction page
         'construction-title': 'Architecture and Construction',
         'construction-intro': 'End-to-end construction management and civil engineering services for commercial, industrial, and infrastructure projects across the Kingdom of Saudi Arabia.',
         'construction-services-title': 'Core Services',
@@ -4884,7 +4546,6 @@
         'construction-management-4': 'Regular progress reporting and stakeholder communication',
         'construction-compliance-title': 'Compliance & Standards',
         'construction-compliance-desc': 'All projects are executed in full compliance with Saudi Building Code (SBC), Civil Defense requirements, and international construction standards. We maintain comprehensive quality documentation and provide warranty support for completed works.',
-        // Fabrication page
         'fabrication-title': 'Steel Fabrication & Metalwork Services',
         'fabrication-video-title': 'Watch Our Fabrication Capabilities',
         'fabrication-video-unsupported': 'Your browser does not support the video tag.',
@@ -4902,7 +4563,6 @@
         'fabrication-capabilities-4': 'Surface Treatment: Sandblasting, painting, and galvanizing for corrosion protection.',
         'fabrication-quality-title': 'Quality Assurance',
         'fabrication-quality-desc': 'All fabrication work undergoes rigorous inspection including dimensional checks, NDT testing (RT, UT, MT, PT), and material certification. We maintain full traceability documentation and provide as-built drawings for all delivered components.',
-        // Fire Safety page
         'fire-safety-title': 'Fire Protection & Safety Systems',
         'fire-safety-intro': 'Comprehensive fire protection solutions including system design, installation, testing, and maintenance for commercial, industrial, and residential facilities throughout Saudi Arabia.',
         'fire-suppression-title': 'Fire Suppression Systems',
@@ -4925,9 +4585,6 @@
         'fire-safety-equipment-4': 'Fire blankets, first aid stations, and emergency equipment',
         'fire-compliance-title': 'Compliance & Certification',
         'fire-compliance-desc': 'All installations comply with Saudi Civil Defense regulations, NFPA codes, and international fire safety standards. We provide comprehensive testing, commissioning, and annual maintenance services with detailed documentation and certification.',
-
-        // Productions 
-
         'productions-title': 'JAZAACO PRODUCTIONS',
         'production-title': 'Jazaaco is a premier full-service reliable production house specializing in:',
         'production-intro': 'Jazaaco builds on its EPC success in KSA to deliver integrated Advertising, Branding, Event, and Interior & Exterior solutions tailored to client needs.',
@@ -4941,8 +4598,6 @@
         'production-8': 'Activations',
         'production-img-1': 'Branding Productions',
         'production-terms-desc': 'Our state-of-the-art equipment facilitates a seamless design-to-production workflow under one roof. We deliver high-quality, Scalable production with affordable pricing and timely delivery with professional installation.',
-
-        // ... Add ALL other English translations
       },
       ar: {
         'nav-home': 'الرئيسية',
@@ -5049,6 +4704,10 @@
         'nahdi-c': 'Nahdi',
         'completed': 'Completed',
         'nahdi-s': 'Restored and renovated complete pharmacy.',
+        'petrominh': 'Petromin Pump',
+        'petrominp': 'Complete construction of the petrol pump and car service stations.',
+        'petromin-c': 'Petromin',
+        'petromin-s': 'Complete construction of the petrol pump and car service stations.',
         'project-cta': 'ابدأ مشروعك معنا',
         'partners-title': 'شركاؤنا',
         'clients-title': 'عملاؤنا',
@@ -5062,7 +4721,6 @@
         'team-board-position': 'عضو مجلس الإدارة',
 		  'team-general-position' : 'المدير العام',
         'team-purchase-position': 'رئيس قسم المشتريات',
-        'team-sales-position': 'مدير المبيعات الوطني',
         'team-customer-position': 'مدير علاقات العملاء',
         'team-accounts-position': 'رئيس تطوير الأعمال',
         'team-project-position': 'رئيس قسم المقاولات العامة ماجستير في العمارة',
@@ -5100,8 +4758,6 @@
         'career-heading': 'انضم إلى فريقنا',
         'career-introtext': 'نبحث عن مواهب شغوفة وطموحة ترغب في العمل مع فريق من الخبراء والمحترفين.',
 		'profile-heading': 'ملفنا التعريفي',
-
-        // Industrial page
         'industrial-title': 'المواصفات الفنية: التوريدات الصناعية',
         'industrial-intro': 'قسم التوريدات الصناعية لدينا متخصص في توفير الصمامات عالية الضغط والحشوات الثقيلة ومعدات الحماية الشخصية المتخصصة لقطاع النفط والغاز السعودي.',
         'industrial-cat-title': 'فئات المنتجات الأساسية',
@@ -5110,8 +4766,6 @@
         'industrial-cat-3': 'المثبتات والأجهزة: براغي وصواميل وغسالات ومراسي من الفولاذ المقاوم للصدأ للبيئات البحرية والصناعية.',
         'industrial-cat-4': 'المضخات والصمامات: أنظمة هيدروليكية عالية الضغط وصمامات بوابة وصمامات تحكم لمنشآت البتروكيماويات.',
         'industrial-cat-5': 'مناولة المواد: رافعات شوكية وعربات البليت ومعدات رفع مع دعم صيانة كامل.',
-
-        // HVAC page
         'hvac-title': 'التفاصيل الفنية للتكييف والميكانيكا',
         'hvac-video-title': 'شاهد حلول التبريد لدينا أثناء العمل',
         'hvac-video-unsupported': 'متصفحك لا يدعم علامة الفيديو.',
@@ -5133,8 +4787,6 @@
         'mep-img-3': 'سباكة',
         'hvac-maintenance-title': 'برامج الصيانة الوقائية',
         'hvac-maintenance-desc': 'تشمل حزم الصيانة لدينا فحوصات ربع سنوية واستبدال المرشحات وشحن المبردات وتقارير أداء مفصلة لضمان عمر النظام الطويل.',
-
-        // Cooling page
         'cooling-video-title': 'شاهد حلول التبريد لدينا أثناء العمل',
         'cooling-video-unsupported': 'متصفحك لا يدعم علامة الفيديو.',
         'cooling-title': 'حلول تبريد الخرسانة',
@@ -5158,8 +4810,6 @@
         'cooling-app-2': 'تبريد سطح الجسر لبنية تحتية ساحلية في جدة',
         'cooling-app-3': 'صبات خرسانية ضخمة للمنشآت الصناعية ومحطات الطاقة',
         'cooling-app-4': 'التحكم في درجة حرارة إنتاج الخرسانة المسبقة الصنع',
-
-        // Sustainability page
         'sustainability-title': 'الاستدامة وكفاءة الطاقة',
         'sustainability-video-title': 'شاهد الاستدامة لدينا في العمارة',
         'sustainability-video-unsupported': 'متصفحك لا يدعم علامة الفيديو.',
@@ -5176,8 +4826,6 @@
         'sustainability-impact-4': 'أنظمة قياس ذكية وإدارة طاقة للتحسين المستمر',
         'sustainability-vision-title': 'التوافق مع رؤية 2030',
         'sustainability-vision-desc': 'مبادرات الاستدامة لدينا تدعم التزام المملكة بالطاقة المتجددة والحياد الكربوني. نوفر تقييمات مفصلة للبصمة الكربونية وتحليل العائد على الاستثمار لجميع مشاريع كفاءة الطاقة.',
-
-        // Internal Architecture page
         'internal-arch-title': 'المواصفات الفنية: العمارة الداخلية',
         'internal-arch-intro': 'حلول العمارة الداخلية لدينا تركز على التخطيط الذكي للمساحة والتشطيبات عالية الجودة والتكامل السلس للأنظمة المعمارية والميكانيكية.',
         'internal-arch-scope-title': 'نطاق العمل',
@@ -5190,8 +4838,6 @@
         'internal-arch-design-desc': 'جميع التصاميم تتوافق مع قوانين البناء السعودية ولوائح الدفاع المدني والمعايير المعمارية الدولية, مما يضمن السلامة والمتانة.',
         'internal-arch-execution-title': 'التنفيذ والتشطيب',
         'internal-arch-execution-desc': 'فرق التنفيذ الماهرة لدينا تضمن التركيب الدقيق والتشطيب المتميز والتسليم في الوقت المحدد مع رقابة صارمة على الجودة في كل مرحلة.',
-
-        // Telecom page
         'telecom-title': 'حلول البنية التحتية للاتصالات',
         'telecom-intro': 'خدمات البنية التحتية للاتصالات الشاملة بما في ذلك تركيب الألياف الضوئية وتصميم الشبكات والصيانة المستمرة للمنشآت الصناعية والتجارية في جميع أنحاء المملكة.',
         'telecom-fiber-title': 'حلول الألياف الضوئية',
@@ -5206,8 +4852,6 @@
         'telecom-network-4': 'اتصالات الطوارئ: أنظمة راديو ثنائية الاتجاه وبنية تحتية للإخطار بحالات الطوارئ.',
         'telecom-support-title': 'الصيانة والدعم',
         'telecom-support-desc': 'دعم فني على مدار 24/7 مع فرق استجابة سريعة لاستكشاف أخطاء الشبكة وإصلاح الألياف وترقيات النظام. نحتفظ بوثائق شاملة ورسومات كما تم بناؤها لجميع التركيبات.',
-
-        // Manpower page
         'manpower-title': 'خدمات توريد القوى العاملة المهنية',
         'manpower-intro': 'توريد موثوق للعمالة الماهرة وغير الماهرة للمشاريع الصناعية والبناء والصيانة.',
         'manpower-unskilled-title': 'خدمات العمالة الماهرة وغير الماهرة',
@@ -5226,7 +4870,6 @@
         'manpower-compliance-4': 'إدارة التوثيق بما في ذلك تصاريح العمل ومعالجة الإقامة',
         'manpower-management-title': 'إدارة القوى العاملة',
         'manpower-management-desc': 'نوفر حلول قوى عاملة كاملة بما في ذلك التوظيف والتأهيل وإدارة الرواتب ومراقبة الأداء. فريقنا يضمن أن جميع العمال مجهزون ومدربون ومشرف عليهم بشكل صحيح للحفاظ على أعلى معايير السلامة والإنتاجية.',
-        // Rentals page
         'rentals-title': 'خدمات تأجير المعدات',
         'rentals-intro': 'حلول تأجير شاملة للآلات الثقيلة والمعدات المتخصصة للبناء والنفط والغاز والمشاريع الصناعية في جميع أنحاء المملكة.',
         'rentals-heavy-title': 'الآلات الثقيلة',
@@ -5242,7 +4885,6 @@
         'rentals-specialized-4': 'الضواغط: ضواغط هواء للأدوات الهوائية وعمليات السفع الرملي.',
         'rentals-terms-title': 'شروط الإيجار والدعم',
         'rentals-terms-desc': 'فترات إيجار مرنة من يومية إلى عقود طويلة الأجل. جميع المعدات يتم صيانتها وفحصها بانتظام لامتثال السلامة. نوفر دعمًا فنيًا في الموقع وقطع غيار وخدمات أعطال طارئة لتقليل وقت التوقف.',
-        // Construction page
         'construction-title': 'الهندسة المعمارية  و  الإنشاءات',
         'construction-intro': 'خدمات إدارة البناء والهندسة المدنية الشاملة للمشاريع التجارية والصناعية والبنية التحتية في جميع أنحاء المملكة.',
         'construction-services-title': 'الخدمات الأساسية',
@@ -5260,7 +4902,6 @@
         'construction-management-4': 'تقارير تقدم منتظمة وتواصل أصحاب المصلحة',
         'construction-compliance-title': 'الامتثال والمعايير',
         'construction-compliance-desc': 'يتم تنفيذ جميع المشاريع بامتثال كامل لقانون البناء السعودي (SBC) ومتطلبات الدفاع المدني ومعايير البناء الدولية. نحتفظ بوثائق جودة شاملة ونوفر دعم ضمان للأعمال المنجزة.',
-        // Fabrication page
         'fabrication-title': 'خدمات تصنيع الصلب والأعمال المعدنية',
         'fabrication-video-title': 'شاهد قدرات التصنيع لدينا',
         'fabrication-video-unsupported': 'متصفحك لا يدعم علامة الفيديو.',
@@ -5278,7 +4919,6 @@
         'fabrication-capabilities-4': 'معالجة السطح: السفع الرملي والطلاء والجلفنة للحماية من التآكل.',
         'fabrication-quality-title': 'ضمان الجودة',
         'fabrication-quality-desc': 'جميع أعمال التصنيع تخضع لفحص صارم بما في ذلك فحوصات الأبعاد واختبار NDT (RT، UT، MT، PT) وشهادة المواد. نحتفظ بتوثيق تتبع كامل ونوفر رسومات كما تم بناؤها لجميع المكونات المسلمة.',
-        // Fire Safety page
         'fire-safety-title': 'أنظمة الحماية من الحرائق والسلامة',
         'fire-safety-intro': 'حلول حماية من الحرائق شاملة بما في ذلك تصميم النظام والتركيب والاختبار والصيانة للمنشآت التجارية والصناعية والسكنية في جميع أنحاء المملكة.',
         'fire-suppression-title': 'أنظمة إخماد الحرائق',
@@ -5301,7 +4941,6 @@
         'fire-safety-equipment-4': 'بطانيات حريق ومحطات إسعافات أولية ومعدات طوارئ',
         'fire-compliance-title': 'الامتثال والشهادة',
         'fire-compliance-desc': 'جميع التركيبات تتوافق مع لوائح الدفاع المدني السعودي وأكواد NFPA ومعايير السلامة من الحرائق الدولية. نوفر اختبارًا وتكليفًا وخدمات صيانة سنوية شاملة مع توثيق وشهادة مفصلة.',
-
         'productions-title': 'إنتاجات جازاكو',
         'production-title': 'جازاكو هي شركة إنتاج موثوقة متكاملة الخدمات ورائدة في مجالها متخصصة في:',
         'production-intro': 'تبني جازاكو على نجاحها في مجال EPC في المملكة العربية السعودية لتقديم حلول متكاملة في الإعلانات، العلامات التجارية، الفعاليات، والحلول الداخلية والخارجية مصممة خصيصًا حسب احتياجات العميل.',
@@ -5315,15 +4954,10 @@
         'production-8': 'التنشيطات التسويقية',
         'production-img-1': 'إنتاجات العلامات التجارية',
         'production-terms-desc': 'تمكّن معداتنا الحديثة والمتطورة من تنفيذ سير عمل سلس من التصميم إلى الإنتاج تحت سقف واحد. نحن نوفر إنتاجًا عالي الجودة وقابل للتطوير بأسعار مناسبة وتسليم في الوقت المحدد مع تركيب احترافي.',
-
-        // ... Add ALL other Arabic translations
       }
     };
 	
 	
-    // ══════════════════════════════════════════════════════════════
-    // LANGUAGE HANDLING
-    // ══════════════════════════════════════════════════════════════
     let currentLang = localStorage.getItem('preferredLanguage') || 'en';
 
     function setLanguage(lang) {
@@ -5335,11 +4969,9 @@
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
       document.documentElement.lang = lang;
 
-      // Update button states
       document.getElementById('btn-en')?.classList.toggle('active-lang', lang === 'en');
       document.getElementById('btn-ar')?.classList.toggle('active-lang', lang === 'ar');
 
-      // Update all translatable elements
       document.querySelectorAll('[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
         const text = translations?.[lang]?.[key];
@@ -5353,11 +4985,7 @@
       });
     }
 
-    // ══════════════════════════════════════════════════════════════
-    // PAGE NAVIGATION WITH SMOOTH TRANSITIONS
-    // ══════════════════════════════════════════════════════════════
     function showPage(pageId) {
-      // Show loading overlay
       const loadingOverlay = document.getElementById('loadingOverlay');
       if (loadingOverlay) loadingOverlay.classList.add('active');
 
@@ -5369,7 +4997,6 @@
         return;
       }
 
-      // Exit animation for current page
       if (currentPage && currentPage !== targetPage) {
         currentPage.classList.add('page-exiting');
 
@@ -5385,7 +5012,6 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
           closeMobileMenu();
 
-          // Reinitialize Swiper if needed
           if (pageId.includes('-page') && typeof Swiper !== 'undefined') {
             setTimeout(() => {
               const swiperEl = targetPage.querySelector('.project-swiper');
@@ -5403,7 +5029,6 @@
             }, 100);
           }
 
-          // Refresh AOS
           if (typeof AOS !== 'undefined') AOS.refresh();
         }, 300);
       } else {
@@ -5413,9 +5038,6 @@
       }
     }
 
-    // ══════════════════════════════════════════════════════════════
-    // MOBILE MENU
-    // ══════════════════════════════════════════════════════════════
     function toggleMobileMenu() {
       document.getElementById('main-menu')?.classList.toggle('active');
     }
@@ -5424,9 +5046,6 @@
       document.getElementById('main-menu')?.classList.remove('active');
     }
 
-    // ══════════════════════════════════════════════════════════════
-    // DROPDOWN MANAGEMENT
-    // ══════════════════════════════════════════════════════════════
     document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
       toggle.addEventListener('click', e => {
         e.preventDefault();
@@ -5434,7 +5053,6 @@
         const dropdown = toggle.closest('.dropdown');
         const wasActive = dropdown.classList.contains('active');
 
-        // Close all dropdowns
         document.querySelectorAll('.dropdown, .dropdown-submenu')
           .forEach(el => el.classList.remove('active'));
 
@@ -5442,7 +5060,6 @@
       });
     });
 
-    // Close dropdowns when clicking outside
     document.addEventListener('click', e => {
       if (!e.target.closest('.dropdown')) {
         document.querySelectorAll('.dropdown, .dropdown-submenu')
@@ -5450,9 +5067,6 @@
       }
     });
 
-    // ══════════════════════════════════════════════════════════════
-    // SCROLL BEHAVIOR
-    // ══════════════════════════════════════════════════════════════
     let lastScrollTop = 0;
 const scrollThreshold = 100;
 
@@ -5463,13 +5077,11 @@ window.addEventListener('scroll', () => {
   const backToTopBtn = document.getElementById('backToTop');
 
   if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
-    // 👇 THIS CODE HIDES THE NAVBAR WHEN SCROLLING DOWN
     nav?.classList.add('hidden');
     nav?.classList.add('nav-at-top');
     topBar?.classList.add('hidden');
     closeMobileMenu();
   } else if (currentScroll < lastScrollTop) {
-    // 👇 THIS CODE SHOWS THE NAVBAR WHEN SCROLLING UP
     nav?.classList.remove('hidden');
     topBar?.classList.remove('hidden');
     
@@ -5489,17 +5101,11 @@ window.addEventListener('scroll', () => {
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    // ══════════════════════════════════════════════════════════════
-    // FILE UPLOAD DISPLAY
-    // ══════════════════════════════════════════════════════════════
     document.getElementById('cvUpload')?.addEventListener('change', function (e) {
       const fileName = e.target.files[0]?.name || 'No file chosen';
       document.getElementById('file-name').textContent = fileName;
     });
 
-    // ══════════════════════════════════════════════════════════════
-    // FORM VALIDATION
-    // ══════════════════════════════════════════════════════════════
     document.getElementById("jobForm")?.addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -5531,7 +5137,6 @@ window.addEventListener('scroll', () => {
         return;
       }
 
-      // Submit via fetch, then show success popup
       const submitBtn = this.querySelector('button[type="submit"]');
       const origBtnText = submitBtn ? submitBtn.textContent : 'Submit Application';
       if (submitBtn) { submitBtn.textContent = 'Submitting…'; submitBtn.disabled = true; }
@@ -5546,7 +5151,6 @@ window.addEventListener('scroll', () => {
           if (fn) fn.textContent = 'No file chosen';
         })
         .catch(() => {
-          // Show popup even on network error so UX isn't broken
           showPopup('careersSuccessPopup');
           this.reset();
           const fn = document.getElementById('file-name');
@@ -5559,14 +5163,9 @@ window.addEventListener('scroll', () => {
           }
         });
     });
-    // ══════════════════════════════════════════════════════════════
-    // INITIALIZATION
-    // ══════════════════════════════════════════════════════════════
     document.addEventListener('DOMContentLoaded', () => {
-      // Set initial language
       setLanguage(currentLang);
 
-      // Initialize AOS
       if (typeof AOS !== 'undefined') {
         AOS.init({
           duration: 800,
@@ -5576,7 +5175,6 @@ window.addEventListener('scroll', () => {
         });
       }
 
-      // Initialize Swiper
       if (typeof Swiper !== 'undefined') {
         const swiperElements = document.querySelectorAll('.project-swiper');
         swiperElements.forEach(el => {
@@ -5594,16 +5192,10 @@ window.addEventListener('scroll', () => {
         });
       }
 
-      // Show main content
       showPage('main-site-content');
     });
 	
-	
-	 id="POPUP_JS_PASTE_BEFORE_SCRIPT_CLOSING_TAG"
-	 // ══════════════════════════════════════════════════════════════
-    // SUCCESS POPUP FUNCTIONS
-    // ══════════════════════════════════════════════════════════════
-    function showPopup(id) {
+	 function showPopup(id) {
       var overlay = document.getElementById(id);
       if (overlay) overlay.classList.add('show');
     }
@@ -5613,7 +5205,6 @@ window.addEventListener('scroll', () => {
       if (overlay) overlay.classList.remove('show');
     }
 
-    // Close on Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closePopup('contactSuccessPopup');
@@ -5621,7 +5212,6 @@ window.addEventListener('scroll', () => {
       }
     });
 
-    // ── Contact form AJAX submit ─────────────────────────────────
     function handleContactSubmit() {
       var form = document.getElementById('contactForm');
       if (!form) return;
@@ -5655,7 +5245,6 @@ window.addEventListener('scroll', () => {
           form.reset();
         })
         .catch(function() {
-          // Still show popup so UX isn't blocked on backend/network issues
           showPopup('contactSuccessPopup');
           form.reset();
         })
@@ -5664,11 +5253,9 @@ window.addEventListener('scroll', () => {
         });
     }
 	
-	/* ── CHATBOT ── */
 (function () {
-    // === UPDATE THESE TWO LINES ===
-    var API_KEY      = ''; // ← Put your NEW Anthropic API key here
-    var MODEL_NAME   = 'claude-sonnet-4-6';   // Best current model (as of 2026)
+    var API_KEY      = '';
+    var MODEL_NAME   = 'claude-sonnet-4-6';
 
     var API_ENDPOINT = 'https://api.anthropic.com/v1/messages';
 
@@ -5857,7 +5444,6 @@ window.addEventListener('scroll', () => {
       });
     }
 
-    // Show notification after 4 seconds if chat is closed
     setTimeout(function () { 
       if (!isOpen && notif) notif.style.display = 'block'; 
     }, 4000);
@@ -5865,3 +5451,4 @@ window.addEventListener('scroll', () => {
 })();
 
   </script>
+</html>
