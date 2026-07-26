@@ -478,7 +478,7 @@
     .jz-avatar { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #fff; }
     .jz-msg.jz-bot .jz-avatar { background: var(--ink); }
     .jz-msg.jz-user .jz-avatar { background: var(--gold); }
-    .jz-bubble { padding: 10px 14px; border-radius: 14px; font-size: 13.5px; line-height: 1.55; }
+    .jz-bubble { padding: 10px 14px; border-radius: 14px; font-size: 13.5px; line-height: 1.55; white-space: pre-line; }
     .jz-msg.jz-bot .jz-bubble { background: var(--bg); color: var(--text); border-bottom-left-radius: 4px; }
     .jz-msg.jz-user .jz-bubble { background: var(--ink); color: #fff; border-bottom-right-radius: 4px; }
     .jz-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 14px 12px; }
@@ -1765,9 +1765,10 @@
     </div>
     <div class="jz-messages" id="jz-messages" aria-live="polite"></div>
     <div class="jz-chips" id="jz-chips">
-      <button class="jz-chip">Our services</button>
-      <button class="jz-chip">HVAC & MEP</button>
-      <button class="jz-chip">Get a quote</button>
+      <button class="jz-chip">Industrial Supplies</button>
+      <button class="jz-chip">HVAC / MEP</button>
+      <button class="jz-chip">Architecture & Construction (A&amp;C)</button>
+      <button class="jz-chip">Production House</button>
     </div>
     <div class="jz-input-row">
       <input type="text" id="jz-input" placeholder="Ask us anything…">
@@ -2530,11 +2531,67 @@
             close = document.getElementById('jz-close'), msgs = document.getElementById('jz-messages'),
             input = document.getElementById('jz-input'), send = document.getElementById('jz-send'),
             chips = document.getElementById('jz-chips'), notif = document.getElementById('jz-notif');
-      let open = false, greeted = false;
+      let open = false, greeted = false, awaitingClarification = false;
+
+      const GENERAL_EMAIL = 'Info@jazaaco.com', GENERAL_PHONE = '+966 12 612 5560';
+      const DIVISIONS = {
+        industrial: { name: 'Industrial Supplies', email: 'abdulrazak@jazaaco.com', phone: '0564138955',
+          keywords: ['industrial', 'supplies', 'supply', 'equipment', 'spare part', 'tools', 'tool', 'procurement'] },
+        hvac: { name: 'HVAC / MEP', email: 'mikhil@jazaaco.com', phone: '0564138821',
+          keywords: ['hvac', 'mep', 'air condition', 'ducting', 'ductwork', 'air duct', 'mechanical', 'electrical', 'plumbing'] },
+        ac: { name: 'Architecture & Construction (A&C)', email: 'abdullah@jazaaco.com', phone: '0566413109',
+          keywords: ['construction', 'architecture', 'building', 'fit-out', 'fit out', 'civil work', 'interior design', 'interior', 'contractor'] },
+        production: { name: 'Production House', email: 'moinkhan@jazaaco.com', phone: '0561957582',
+          keywords: ['video', 'content', 'media', 'branding', 'photography', 'production'] }
+      };
+
+      function detectDivisions(text){
+        const t = text.toLowerCase();
+        return Object.keys(DIVISIONS).filter(key => DIVISIONS[key].keywords.some(k => t.includes(k)));
+      }
+      function contactLines(key){
+        const d = DIVISIONS[key];
+        return `${d.name}:\n📧 ${d.email}\n📞 ${d.phone}`;
+      }
       function add(role, text){ const r=document.createElement('div'); r.className='jz-msg '+role; const a=document.createElement('div'); a.className='jz-avatar'; a.textContent=role==='jz-bot'?'JV':'You'; const b=document.createElement('div'); b.className='jz-bubble'; b.textContent=text; r.append(a,b); msgs.append(r); msgs.scrollTop=msgs.scrollHeight; }
-      btn.addEventListener('click', ()=>{ open=!open; win.classList.toggle('jz-open',open); if(open){ notif.style.display='none'; if(!greeted){ add('jz-bot',"👋 Hello! I'm the Jazaaco Ventures assistant. How can I help?"); greeted=true; } setTimeout(()=>input.focus(),200); } });
+
+      btn.addEventListener('click', ()=>{
+        open=!open; win.classList.toggle('jz-open',open);
+        if(open){
+          notif.style.display='none';
+          if(!greeted){
+            add('jz-bot',"Hi! 👋 Welcome to Jazaaco Ventures. What can we help you with today?");
+            add('jz-bot',"Which of the following best describes what you're looking for?");
+            greeted=true;
+          }
+          setTimeout(()=>input.focus(),200);
+        }
+      });
       close.addEventListener('click', ()=>{ open=false; win.classList.remove('jz-open'); });
-      function reply(t){ if(!t.trim()) return; add('jz-user',t); input.value=''; setTimeout(()=>add('jz-bot','Thanks! For quotes, call +966 12 612 5560 or email Info@jazaaco.com.'),500); }
+
+      function respond(text){
+        const matched = detectDivisions(text);
+        if(matched.length === 1){
+          const d = DIVISIONS[matched[0]];
+          add('jz-bot', `Great — for ${d.name} inquiries, you can reach our team directly:\n📧 ${d.email}\n📞 ${d.phone}\nThey'll be happy to assist you further!`);
+          awaitingClarification = false;
+          return;
+        }
+        if(matched.length > 1){
+          add('jz-bot', "Looks like that touches more than one team — here are the right contacts for each:\n\n" + matched.map(contactLines).join('\n\n'));
+          awaitingClarification = false;
+          return;
+        }
+        if(awaitingClarification){
+          add('jz-bot', `Thanks for reaching out! For general inquiries, please contact our main office, and we'll direct you to the right team.\n📧 ${GENERAL_EMAIL}\n📞 ${GENERAL_PHONE}`);
+          awaitingClarification = false;
+          return;
+        }
+        add('jz-bot', "Just to make sure I connect you with the right person — is this related to a physical product/supply need, a mechanical/HVAC project, a construction/design project, or media/content production?");
+        awaitingClarification = true;
+      }
+
+      function reply(t){ if(!t.trim()) return; add('jz-user',t); input.value=''; setTimeout(()=>respond(t), 500); }
       send.addEventListener('click', ()=>reply(input.value));
       input.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); reply(input.value); } });
       chips.querySelectorAll('.jz-chip').forEach(c=>c.addEventListener('click',()=>reply(c.textContent)));
