@@ -881,6 +881,11 @@
             <h3>Syed Omair</h3>
             <span data-key="team-marketing-position">Sales And Marketing Strategist</span>
           </div>
+		  <div class="executive-card">
+            <img src="static/assets/yousuf-image.jpg" alt="yousuf">
+            <h3>Yousuf Adam</h3>
+            <span data-key="team-purchaseco-position">Purchase Co-ordinator</span>
+          </div>
           <div class="executive-card">
             <img src="static/assets/member9-image.jpg" alt="ahlam">
             <h3>Ahlam Nayef</h3>
@@ -1901,6 +1906,7 @@
         "team-HVAC-position": "Head of HVAC &amp; MEP",
         "team-hcc-position": "Head of Concrete Cooling",
         "team-purchase-position": "Head of Purchase",
+		"team-purchaseco-position": "Purchase Co-ordinator",
         "team-customer-position": "Customer Relation Manager",
         "team-IT-position": "IT and Sales Engineer",
         "team-marketing-position": "Sales And Marketing Strategist",
@@ -2229,6 +2235,7 @@
         "team-HVAC-position": "رئيس التكييف والأعمال الميكانيكية",
         "team-hcc-position": "رئيس تبريد الخرسانة",
         "team-purchase-position": "رئيس المشتريات",
+		"team-purchaseco-position": "منسق مشتريات",
         "team-customer-position": "مدير علاقات العملاء",
         "team-IT-position": "مهندس تقنية معلومات ومبيعات",
         "team-marketing-position": "مستراتيجي المبيعات والتسويق",
@@ -2531,18 +2538,22 @@
             close = document.getElementById('jz-close'), msgs = document.getElementById('jz-messages'),
             input = document.getElementById('jz-input'), send = document.getElementById('jz-send'),
             chips = document.getElementById('jz-chips'), notif = document.getElementById('jz-notif');
-      let open = false, greeted = false, awaitingClarification = false;
+      let open = false, greeted = false, state = 'start', pendingDivision = null;
 
       const GENERAL_EMAIL = 'Info@jazaaco.com', GENERAL_PHONE = '+966 12 612 5560';
       const DIVISIONS = {
         industrial: { name: 'Industrial Supplies', email: 'abdulrazak@jazaaco.com', phone: '0564138955',
-          keywords: ['industrial', 'supplies', 'supply', 'equipment', 'spare part', 'tools', 'tool', 'procurement'] },
+          keywords: ['industrial', 'supplies', 'supply', 'equipment', 'spare part', 'tools', 'tool', 'procurement'],
+          followUp: "Got it — Industrial Supplies. What specifically are you after: spare parts, equipment procurement, tools, or something else in industrial supply?" },
         hvac: { name: 'HVAC / MEP', email: 'mikhil@jazaaco.com', phone: '0564138821',
-          keywords: ['hvac', 'mep', 'air condition', 'ducting', 'ductwork', 'air duct', 'mechanical', 'electrical', 'plumbing'] },
+          keywords: ['hvac', 'mep', 'air condition', 'ducting', 'ductwork', 'air duct', 'mechanical', 'electrical', 'plumbing'],
+          followUp: "Got it — HVAC/MEP. Is this for a new HVAC installation, ducting/ventilation work, or mechanical, electrical, or plumbing services?" },
         ac: { name: 'Architecture & Construction (A&C)', email: 'abdullah@jazaaco.com', phone: '0566413109',
-          keywords: ['construction', 'architecture', 'building', 'fit-out', 'fit out', 'civil work', 'interior design', 'interior', 'contractor'] },
+          keywords: ['construction', 'architecture', 'building', 'fit-out', 'fit out', 'civil work', 'interior design', 'interior', 'contractor'],
+          followUp: "Got it — Architecture & Construction. Are you looking for construction/civil works, architectural design, or interior fit-out?" },
         production: { name: 'Production House', email: 'moinkhan@jazaaco.com', phone: '0561957582',
-          keywords: ['video', 'content', 'media', 'branding', 'photography', 'production'] }
+          keywords: ['video', 'content', 'media', 'branding', 'photography', 'production'],
+          followUp: "Got it — Production House. Are you after video production, content/branding, or photography?" }
       };
 
       function detectDivisions(text){
@@ -2552,6 +2563,13 @@
       function contactLines(key){
         const d = DIVISIONS[key];
         return `${d.name}:\n📧 ${d.email}\n📞 ${d.phone}`;
+      }
+      function multiContactMessage(matched){
+        return "Looks like that touches more than one team — here are the right contacts for each:\n\n" + matched.map(contactLines).join('\n\n');
+      }
+      function deliverContact(key){
+        const d = DIVISIONS[key];
+        add('jz-bot', `Great — for ${d.name} inquiries, you can reach our team directly:\n📧 ${d.email}\n📞 ${d.phone}\nThey'll be happy to assist you further!`);
       }
       function add(role, text){ const r=document.createElement('div'); r.className='jz-msg '+role; const a=document.createElement('div'); a.className='jz-avatar'; a.textContent=role==='jz-bot'?'JV':'You'; const b=document.createElement('div'); b.className='jz-bubble'; b.textContent=text; r.append(a,b); msgs.append(r); msgs.scrollTop=msgs.scrollHeight; }
 
@@ -2570,25 +2588,38 @@
       close.addEventListener('click', ()=>{ open=false; win.classList.remove('jz-open'); });
 
       function respond(text){
+        // Follow-up answer to a division-specific question — deliver the contact now.
+        if(state === 'awaiting_detail'){
+          const matched = detectDivisions(text);
+          if(matched.length > 1){
+            add('jz-bot', multiContactMessage(matched));
+          } else {
+            // If they clearly named a different division while answering, honor that instead.
+            deliverContact(matched.length === 1 ? matched[0] : pendingDivision);
+          }
+          state = 'start'; pendingDivision = null;
+          return;
+        }
+
         const matched = detectDivisions(text);
         if(matched.length === 1){
-          const d = DIVISIONS[matched[0]];
-          add('jz-bot', `Great — for ${d.name} inquiries, you can reach our team directly:\n📧 ${d.email}\n📞 ${d.phone}\nThey'll be happy to assist you further!`);
-          awaitingClarification = false;
+          add('jz-bot', DIVISIONS[matched[0]].followUp);
+          pendingDivision = matched[0];
+          state = 'awaiting_detail';
           return;
         }
         if(matched.length > 1){
-          add('jz-bot', "Looks like that touches more than one team — here are the right contacts for each:\n\n" + matched.map(contactLines).join('\n\n'));
-          awaitingClarification = false;
+          add('jz-bot', multiContactMessage(matched));
+          state = 'start';
           return;
         }
-        if(awaitingClarification){
+        if(state === 'clarify'){
           add('jz-bot', `Thanks for reaching out! For general inquiries, please contact our main office, and we'll direct you to the right team.\n📧 ${GENERAL_EMAIL}\n📞 ${GENERAL_PHONE}`);
-          awaitingClarification = false;
+          state = 'start';
           return;
         }
         add('jz-bot', "Just to make sure I connect you with the right person — is this related to a physical product/supply need, a mechanical/HVAC project, a construction/design project, or media/content production?");
-        awaitingClarification = true;
+        state = 'clarify';
       }
 
       function reply(t){ if(!t.trim()) return; add('jz-user',t); input.value=''; setTimeout(()=>respond(t), 500); }
